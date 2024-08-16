@@ -4,6 +4,13 @@ vim.opt.guicursor = "n:block-blinkon500,i:hor20"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Add filetype
+vim.filetype.add({
+	extension = {
+		mdx = "mdx",
+	},
+})
+
 -- Show filename.
 vim.opt.title = true
 
@@ -46,19 +53,19 @@ local augroup = vim.api.nvim_create_augroup
 local yank_group = augroup("HighlightYank", {})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = yank_group,
-    pattern = "*",
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = "IncSearch",
-            timeout = 40,
-        })
-    end,
+	group = yank_group,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 40,
+		})
+	end,
 })
 
 -- Trim white spaces before saving.
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    group = config,
-    pattern = "*",
-    command = "%s/\\s\\+$//e",
+	group = config,
+	pattern = "*",
+	command = "%s/\\s\\+$//e",
 })

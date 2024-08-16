@@ -48,12 +48,12 @@ return {
 					"gosum",
 				},
 				incremental_selection = {
-					enable = true,
+					enable = false,
 					keymaps = {
-						init_selection = "<leader>vv",
-						node_incremental = "+",
-						scope_incremental = false,
-						node_decremental = "_",
+						init_selection = "<leader>v",
+						node_incremental = "<Tab>",
+						scope_incremental = "<CR>",
+						node_decremental = "<S-Tab>",
 					},
 				},
 				textobjects = {

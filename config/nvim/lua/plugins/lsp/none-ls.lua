@@ -33,9 +33,10 @@ return {
 
 				sources = {
 					--formatting.prettier,
+					formatting.forge_fmt,
 					formatting.stylua,
 					formatting.biome,
-					code_actions.gitsigns,
+					-- code_actions.gitsigns,
 				},
 
 				-- configure format on save

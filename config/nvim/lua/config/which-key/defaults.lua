@@ -1,7 +1,7 @@
 return {
 	h = {
 		name = "+Harpoon",
-		m = {
+		q = {
 			function()
 				local harpoon = require("harpoon")
 				harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -10,7 +10,7 @@ return {
 		},
 		a = {
 			function()
-				require("harpoon"):list():apned()
+				require("harpoon"):list():add()
 			end,
 			"Harpoon File",
 		},
@@ -59,6 +59,20 @@ return {
 					:find()
 			end,
 			"Find Harpoon File",
+		},
+		o = {
+			function()
+				local harpoon = require("harpoon")
+				harpoon:list():next()
+			end,
+			"Harpoon Menu",
+		},
+		i = {
+			function()
+				local harpoon = require("harpoon")
+				harpoon:list():prev()
+			end,
+			"Harpoon Menu",
 		},
 	},
 }
