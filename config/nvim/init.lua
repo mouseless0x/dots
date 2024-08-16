@@ -1,0 +1,6 @@
+-- require("config.keymaps")
+-- require("config.autocmds")
+-- require("config.abbreviations")
+require("config.settings")
+require("config.remap")
+require("config.lazy")

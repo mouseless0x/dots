@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ~/projects ~/work/pimlico ~/work/mev -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]];
+then
+    exit 0
+fi
+
+if [[ -z $TMUX ]];
+then
+    cd $selected && clear
+    exit 0
+else
+    tmux send-keys C-u
+    tmux send-keys "cd \"$selected\" && clear" C-m
+    tmux rename-window "$(basename "$selected")"
+fi

@@ -1,0 +1,26 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config layout bsp
+
+yabai -m config window_placement second_child
+
+# Padding
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config right_padding 10
+yabai -m config left_padding 10
+yabai -m config window_gap 10
+
+# Mouse settings
+# yabai -m config mouse_follows_focus on
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+yabai -m mouse_drop_action swap
+
+# Ignore for these apps
+yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
+
+# JankyBorders
+borders style=round width=6.0 hidpi=off active_color=0xc0e2e2e3 inactive_color=0xc02c2e34 background_color=0x302c2e34 blur_radius=25 &
