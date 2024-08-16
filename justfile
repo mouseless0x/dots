@@ -1,13 +1,13 @@
 # Install everything
-install-all: tmux alacritty nvim
+install-all: tmux alacritty starship bin yabai nvim
 
 # Install tmux configuration
 tmux:
-  cp ./.tmux.conf ~/.tmux.conf
+  cp -r ./config/tmux ~/.config
 
 # Install alacritty configuration
 alacritty:
-  cp -R ./config/alacritty ~/.config
+  cp -r ./config/alacritty ~/.config
 
 # Install starship.rs configuration
 starship:
@@ -16,6 +16,15 @@ starship:
 # Install custom shell scripts
 bin:
   cp -r ./bin ~/.local/bin
+
+# Install yabai + skhd
+yabai:
+  cp -r ./config/yabai ~/.config/yabai
+  cp -r ./config/skhd ~/.config/skhd
+
+# Install fish
+fish:
+  cp -r ./config/fish ~/.config/fish
 
 # Install the nvim configuration
 nvim:
