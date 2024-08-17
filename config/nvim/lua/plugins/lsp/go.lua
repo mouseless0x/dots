@@ -13,9 +13,9 @@ return {
 				enable = false,
 				style = "eol",
 			},
-			lsp_on_attach = require("config.lsp.on_attach").on_attach,
 		})
 		local cfg = require("go.lsp").config() -- config() return the go.nvim gopls setup
+		cfg.on_attach = require("config.lsp.on_attach").on_attach
 
 		require("lspconfig").gopls.setup(cfg)
 
