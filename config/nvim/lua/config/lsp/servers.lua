@@ -1,7 +1,7 @@
 return {
-	gopls = {},
 	lua_ls = {
 		Lua = {
+			hint = { enable = true },
 			telemetry = { enable = false },
 			diagnostics = {
 				globals = { "vim" },
@@ -18,7 +18,24 @@ return {
 	bashls = {
 		filetypes = { "sh", "zsh" },
 	},
-	tsserver = {},
+	tsserver = {
+		settings = {
+			typescript = {
+				inlayHints = {
+					-- Enabled
+					includeInlayParameterNameHints = "all",
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+					-- Disabled
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = false,
+					includeInlayVariableTypeHints = false,
+					includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+					includeInlayFunctionLikeReturnTypeHints = false,
+				},
+			},
+		},
+	},
 	solidity_ls_nomicfoundation = {
 		cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
 		filetypes = { "solidity" },
