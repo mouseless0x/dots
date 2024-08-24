@@ -19,19 +19,31 @@ return {
 		filetypes = { "sh", "zsh" },
 	},
 	tsserver = {
+		single_file_support = false,
 		settings = {
+			completions = {
+				completeFunctionCalls = true,
+			},
 			typescript = {
 				inlayHints = {
-					-- Enabled
-					includeInlayParameterNameHints = "all",
-					includeInlayPropertyDeclarationTypeHints = true,
-					includeInlayEnumMemberValueHints = true,
-					-- Disabled
+					includeInlayParameterNameHints = "literal",
 					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-					includeInlayFunctionParameterTypeHints = false,
+					includeInlayFunctionParameterTypeHints = true,
 					includeInlayVariableTypeHints = false,
-					includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-					includeInlayFunctionLikeReturnTypeHints = false,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
+				},
+			},
+			javascript = {
+				inlayHints = {
+					includeInlayParameterNameHints = "all",
+					includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayVariableTypeHints = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayEnumMemberValueHints = true,
 				},
 			},
 		},
