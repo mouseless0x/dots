@@ -1,5 +1,5 @@
 M = {}
-M.on_attach = function(client, bufnr, event)
+M.on_attach = function(client, bufnr)
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
@@ -7,6 +7,14 @@ M.on_attach = function(client, bufnr, event)
 
 		vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 	end
+
+	vim.keymap.set("i", "gp", function()
+		vim.lsp.buf.signature_help()
+	end, { buffer = true })
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers["signature_help"], {
+		border = "single",
+		close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
+	})
 
 	nmap("]d", vim.diagnostic.goto_next, "prev [D]diagnostic")
 	nmap("[d", vim.diagnostic.goto_prev, "next [D]diagnostic")
