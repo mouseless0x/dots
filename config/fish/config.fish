@@ -28,6 +28,8 @@ if status is-interactive
     # Paths
     fish_add_path /opt/homebrew/bin
     fish_add_path ~/.bun/bin/
+    fish_add_path ~/.huff/bin/
+    fish_add_path ~/.foundry/bin/
     fish_add_path ~/.cargo/bin
     fish_add_path ~/.local/bin
 
