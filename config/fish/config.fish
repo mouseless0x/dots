@@ -26,6 +26,7 @@ if status is-interactive
     abbr -a !! --position anywhere --function last_history_item
 
     # Paths
+    fish_add_path /opt/homebrew/sbin
     fish_add_path /opt/homebrew/bin
     fish_add_path ~/.bun/bin/
     fish_add_path ~/.huff/bin/
