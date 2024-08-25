@@ -84,6 +84,13 @@ return {
 				end,
 				desc = "Harpoon: prev file",
 			},
+			{
+				"<M-tab>",
+				function()
+					require("harpoon"):list():next({ ui_nav_wrap = true })
+				end,
+				desc = "Harpoon: cycle files",
+			},
 		},
 	},
 }
