@@ -15,7 +15,7 @@ return {
 			{
 				"<leader>ha",
 				function()
-					require("harpoon.ui"):list():add()
+					require("harpoon"):list():add()
 				end,
 				desc = "Harpoon: [A]dd file",
 			},
