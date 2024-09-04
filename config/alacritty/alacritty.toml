@@ -23,6 +23,7 @@ family = "BerkeleyMono Nerd Font Mono"
 style = "Regular"
 
 [window]
+option_as_alt = "Both"
 decorations = "buttonless"
 opacity = 0.95
 
