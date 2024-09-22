@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	lazy = true,
 	opts = {
-		delay = 500,
+		delay = 1500,
 		preset = "classic",
 		-- Disabled by default for Telescope
 		disable = {

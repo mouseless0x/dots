@@ -37,8 +37,10 @@ return {
 		end
 
 		cmp.setup({
+			enabled = false,
 			completion = {
 				completeopt = "menu,menuone",
+				-- autocomplete = false,
 			},
 			window = {
 				completion = {
@@ -49,12 +51,12 @@ return {
 					border = border("CmpDocBorder"),
 				},
 			},
-			snippet = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
-					vim.snippet.expand(args.body)
-				end,
-			},
+			-- snippet = {
+			-- 	expand = function(args)
+			-- 		require("luasnip").lsp_expand(args.body)
+			-- 		vim.snippet.expand(args.body)
+			-- 	end,
+			-- },
 
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
@@ -90,7 +92,7 @@ return {
 					select = true,
 				}),
 
-				["<Tab>"] = cmp.mapping(function(fallback)
+				["<Leader><Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
 					else
@@ -98,20 +100,19 @@ return {
 					end
 				end, { "i", "s" }),
 
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					--elseif require("luasnip").jumpable(-1) then
-					--	vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
+				-- ["<S-Tab>"] = cmp.mapping(function(fallback)
+				-- 	if cmp.visible() then
+				-- 		cmp.select_prev_item()
+				-- 	--elseif require("luasnip").jumpable(-1) then
+				-- 	--	vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+				-- 	else
+				-- 		fallback()
+				-- 	end
+				-- end, { "i", "s" }),
 			},
 			sources = {
-				-- { name = "super-maven" },
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
+				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "nvim_lua" },
@@ -119,9 +120,24 @@ return {
 			},
 		})
 
-		require("luasnip.loaders.from_vscode").lazy_load()
-		require("luasnip").config.setup()
-		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+		-- Remap to ,ct
+		vim.keymap.set("n", ",ct", function()
+			if vim.b.cmp_enabled == true then
+				require("cmp").setup.buffer({ enabled = false })
+				vim.b.cmp_enabled = false
+				require("notify")("nvim-cmp disabled")
+			else
+				require("cmp").setup.buffer({ enabled = true })
+				vim.b.cmp_enabled = true
+				require("notify")("nvim-cmp enabled")
+			end
+		end, { noremap = true, silent = true })
+
+		-- Disable cmp at startup
+		require("cmp").setup.buffer({ enabled = false })
+
+		-- sus
+		-- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }
