@@ -125,11 +125,11 @@ return {
 			if vim.b.cmp_enabled == true then
 				require("cmp").setup.buffer({ enabled = false })
 				vim.b.cmp_enabled = false
-				require("notify")("nvim-cmp disabled")
+				vim.notify("nvim-cmp disabled", vim.log.levels.INFO)
 			else
 				require("cmp").setup.buffer({ enabled = true })
 				vim.b.cmp_enabled = true
-				require("notify")("nvim-cmp enabled")
+				vim.notify("nvim-cmp enabled", vim.log.levels.INFO)
 			end
 		end, { noremap = true, silent = true })
 
