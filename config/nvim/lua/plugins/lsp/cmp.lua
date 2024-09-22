@@ -120,8 +120,7 @@ return {
 			},
 		})
 
-		-- Remap to ,ct
-		vim.keymap.set("n", ",ct", function()
+		vim.keymap.set("n", "<leader>ct", function()
 			if vim.b.cmp_enabled == true then
 				require("cmp").setup.buffer({ enabled = false })
 				vim.b.cmp_enabled = false

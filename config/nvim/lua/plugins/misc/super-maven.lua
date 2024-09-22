@@ -1,16 +1,17 @@
 return {
 	"supermaven-inc/supermaven-nvim",
 	config = function()
-		require("supermaven-nvim").setup({
-			keymaps = {
-				-- accept_suggestion = "<CR>",
-				-- clear_suggestion = "<C-]>",
-				-- accept_word = "<C-j>",
-			},
-			--disable_inline_completion = true,
-			-- disable_keymaps = true,
-		})
+		require("supermaven-nvim").setup({})
 
-		--vim.keymap.del("i", "<Tab>", { noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>st", function()
+			local api = require("supermaven-nvim.api")
+			api.toggle()
+
+			if api.is_running() then
+				vim.notify("supermaven enabled", vim.log.levels.INFO)
+			else
+				vim.notify("supermaven disabled", vim.log.levels.INFO)
+			end
+		end, { noremap = true, silent = true })
 	end,
 }
