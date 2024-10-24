@@ -14,8 +14,6 @@ return {
 
 			mason_null_ls.setup({
 				ensure_installed = {
-					"biome", -- biome formatter
-					-- "prettier", -- prettier formatter
 					"stylua", -- lua formatter
 					"buf", -- buf formatter
 					"spell", -- spell checker
@@ -32,11 +30,9 @@ return {
 				root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 
 				sources = {
-					--formatting.prettier,
+					formatting.biome,
 					formatting.forge_fmt,
 					formatting.stylua,
-					formatting.biome,
-					-- code_actions.gitsigns,
 				},
 
 				-- configure format on save
