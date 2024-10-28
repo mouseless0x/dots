@@ -13,6 +13,7 @@ return {
 			wrap = true,
 			width = 40,
 			sidebar_header = {
+				enabled = false,
 				align = "right",
 				rounded = false,
 			},
