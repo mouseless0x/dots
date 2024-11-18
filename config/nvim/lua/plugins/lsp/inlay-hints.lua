@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("inlay-hint").setup({
 			virt_text_pos = "eol",
-			highlight_group = "LspInfoTip",
+			highlight_group = "Comment",
 			hl_mode = "combine",
 		})
 	end,
