@@ -37,7 +37,7 @@ return {
 		end
 
 		cmp.setup({
-			enabled = false,
+			enabled = true,
 			completion = {
 				completeopt = "menu,menuone",
 				-- autocomplete = false,
