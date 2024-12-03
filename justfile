@@ -1,5 +1,5 @@
 # Install everything
-install-all: tmux alacritty starship bin yabai nvim
+install-all: tmux alacritty starship bin yabai nvim fish
 
 # Install tmux configuration
 tmux:
