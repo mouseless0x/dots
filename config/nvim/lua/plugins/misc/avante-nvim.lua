@@ -6,7 +6,7 @@ return {
 		hints = { enabled = false },
 		provider = "claude",
 		claude = {
-			api_key_name = "cmd:cat /Users/mous/.anthropic",
+			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
 		},
 		windows = {
 			position = "right",

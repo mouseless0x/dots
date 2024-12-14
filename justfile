@@ -13,6 +13,12 @@ alacritty:
 starship:
   cp ./config/starship.toml ~/.config/starship.toml
 
+# Install fish
+# rm -rf ~/.config/fish
+fish:
+  rm -rf ~/.config/fish
+  cp -r ./config/fish ~/.config
+
 # Install custom shell scripts
 bin:
   cp -r ./bin ~/.local/bin
@@ -21,10 +27,6 @@ bin:
 yabai:
   cp -r ./config/yabai ~/.config/yabai
   cp -r ./config/skhd ~/.config/skhd
-
-# Install fish
-fish:
-  cp -r ./config/fish ~/.config/fish
 
 # Install the nvim configuration
 nvim:
