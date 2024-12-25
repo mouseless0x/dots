@@ -133,7 +133,7 @@ return {
 		end, { noremap = true, silent = true })
 
 		-- Disable cmp at startup
-		require("cmp").setup.buffer({ enabled = false })
+		-- require("cmp").setup.buffer({ enabled = false })
 
 		-- sus
 		-- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
