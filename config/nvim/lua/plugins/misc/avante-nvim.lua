@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	lazy = false,
 	opts = {
-		hints = { enabled = false },
+		hints = { enabled = true },
 		provider = "claude",
 		claude = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",

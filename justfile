@@ -1,6 +1,9 @@
 # Install everything
 install-all: tmux alacritty starship bin yabai nvim fish
 
+arch: install-all fonts-linux
+osx: install-all fonts-osx
+
 # Install tmux configuration
 tmux:
   cp -r ./config/tmux ~/.config
@@ -32,3 +35,10 @@ yabai:
 nvim:
   rm -rf ~/.config/nvim
   cp -R ./config/nvim ~/.config
+
+fonts-linux:
+    rm -rf /usr/share/fonts
+
+fonts-osx:
+    rm -rf ~/Library/Fonts
+    cp -R ./config/fonts ~/Library/Fonts

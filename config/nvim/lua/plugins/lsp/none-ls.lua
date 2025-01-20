@@ -43,6 +43,7 @@ return {
 							group = augroup,
 							buffer = bufnr,
 							callback = function()
+								--vim.lsp.buf.format({ bufnr = bufnr, id = current_client })
 								vim.lsp.buf.format({
 									filter = function(client)
 										--  only use null-ls for formatting instead of lsp server
