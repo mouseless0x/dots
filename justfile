@@ -30,7 +30,7 @@ fish:
 # Install custom shell scripts
 bin:
   rm -rf ~/.local/bin
-  cp -r ./config/common/bin ~/.local/
+  cp -r ./bin ~/.local/
 
 # Install the nvim configuration
 nvim:
@@ -43,7 +43,7 @@ nvim:
 
 fonts-linux:
     rm -rf ~/.local/share/fonts
-    cp -R ./config/commmon/fonts ~/.local/share/fonts
+    cp -R ./config/fonts ~/.local/share/fonts
 
 hyprland:
     rm -rf ~/.config/hypr
@@ -59,7 +59,7 @@ waybar:
 
 fonts-osx:
     rm -rf ~/Library/Fonts
-    cp -R ./config/common/fonts ~/Library/Fonts
+    cp -R ./config/fonts ~/Library/Fonts
 
 # yabai + skhd
 yabai:
