@@ -8,36 +8,33 @@ return {
 		claude = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
 		},
-		windows = {
-			position = "right",
-			wrap = true,
-			width = 40,
-			sidebar_header = {
-				enabled = false,
-				align = "right",
-				rounded = false,
+		--openai = {
+		--	api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
+		--	endpoint = "https://api.openai.com/v1",
+		--	model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
+		--	timeout = 30000, -- timeout in milliseconds
+		--	temperature = 0, -- adjust if needed
+		--	max_tokens = 4096,
+		--},
+		web_search_engine = {
+			providers = {
+				tavily = {
+					api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.tavily",
+				},
 			},
 		},
 	},
-	build = ":AvanteBuild source=false",
+	build = "make",
 	dependencies = {
 		"stevearc/dressing.nvim",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
-		"nvim-tree/nvim-web-devicons",
-		{
-			"HakonHarnes/img-clip.nvim",
-			event = "VeryLazy",
-			opts = {
-				default = {
-					embed_image_as_base64 = false,
-					prompt_for_file_name = false,
-					drag_and_drop = {
-						insert_mode = true,
-					},
-				},
-			},
-		},
+		--- The below dependencies are optional,
+		"echasnovski/mini.pick", -- for file_selector provider mini.pick
+		"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+		"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+		"ibhagwan/fzf-lua", -- for file_selector provider fzf
+		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
 		{
 			"MeanderingProgrammer/render-markdown.nvim",
 			opts = {
@@ -46,4 +43,8 @@ return {
 			ft = { "markdown", "Avante" },
 		},
 	},
+	config = function(_, opts)
+		require("avante").setup(opts)
+		vim.opt.laststatus = 3
+	end,
 }

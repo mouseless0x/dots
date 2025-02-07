@@ -3,6 +3,11 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+		opts = {
+			global_settings = {
+				save_on_toggle = true,
+			},
+		},
 		keys = {
 			{
 				"<leader>hq",
