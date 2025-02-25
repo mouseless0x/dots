@@ -96,6 +96,30 @@ return {
 				end,
 				desc = "Harpoon: cycle files",
 			},
+			--{
+			--		"<C-v>",
+			--		function()
+			--			local harpoon = require("harpoon")
+			--			local current_file = harpoon:list():get(1).value
+			--			if current_file then
+			--				vim.cmd("vs")
+			--				vim.cmd("e " .. current_file)
+			--			end
+			--		end,
+			--		desc = "Harpoon: vertical split current file",
+			--	},
+			-- {
+			-- 	"<C-x>",
+			-- 	function()
+			-- 		local harpoon = require("harpoon")
+			-- 		local current_file = harpoon:list():get(1).value
+			-- 		if current_file then
+			-- 			vim.cmd("sp")
+			-- 			vim.cmd("e " .. current_file)
+			-- 		end
+			-- 	end,
+			-- 	desc = "Harpoon: horizontal split current file",
+			-- },
 		},
 	},
 }

@@ -1,7 +1,7 @@
 return {
 	"folke/tokyonight.nvim",
 	lazy = false,
-	priority = 69420,
+	priority = 1000,
 	config = function()
 		require("tokyonight").setup({
 			lualine_bold = true,

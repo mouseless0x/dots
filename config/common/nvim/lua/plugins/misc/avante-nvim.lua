@@ -3,25 +3,65 @@ return {
 	event = "VeryLazy",
 	lazy = false,
 	opts = {
-		hints = { enabled = true },
-		provider = "claude",
-		claude = {
-			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
+		behaviour = {
+			auto_suggestions = true,
+			auto_set_highlight_group = true,
+			auto_set_keymaps = true,
+			auto_apply_diff_after_generation = false,
+			support_paste_from_clipboard = false,
+			minimize_diff = true,
+			enable_token_counting = true,
+			enable_cursor_planning_mode = true,
 		},
-		--openai = {
-		--	api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
-		--	endpoint = "https://api.openai.com/v1",
-		--	model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
-		--	timeout = 30000, -- timeout in milliseconds
-		--	temperature = 0, -- adjust if needed
-		--	max_tokens = 4096,
-		--},
+		hints = { enabled = false },
+		auto_suggest_provider = "claude",
+		-- Provider settings
+		provider = "claude",
+		cursor_applying_provider = "groq",
+		-- Providers
+		claude = {
+			endpoint = "https://api.anthropic.com",
+			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
+			model = "claude-3-7-sonnet-20250219",
+			temperature = 0,
+			max_tokens = 16384,
+		},
+		openai = {
+			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
+			endpoint = "https://api.openai.com/v1",
+			model = "o3-mini",
+			timeout = 30000,
+			temperature = 0,
+			max_tokens = 16384,
+		},
+		vendors = {
+			--- ... existing vendors
+			groq = {
+				__inherited_from = "openai",
+				api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.groq",
+				endpoint = "https://api.groq.com/openai/v1/",
+				model = "llama-3.3-70b-versatile",
+				max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+			},
+		},
+		-- Daul Boost
+		dual_boost = {
+			enabled = false,
+			first_provider = "openai",
+			second_provider = "claude",
+			prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
+			timeout = 60000, -- Timeout in milliseconds
+		},
+		-- Tools
 		web_search_engine = {
 			providers = {
 				tavily = {
-					api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.tavily",
+					api_key_name = "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",
 				},
 			},
+		},
+		rag_service = {
+			enabeld = true,
 		},
 	},
 	build = "make",

@@ -1,16 +1,17 @@
 return {
 	lua_ls = {
-		Lua = {
-			hint = { enable = false },
-			telemetry = { enable = false },
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				-- make language server aware of runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
+		settings = {
+			Lua = {
+				runtime = {
+					version = "LuaJIT",
+					special = { reload = "require" },
+				},
+				workspace = {
+					library = {
+						vim.fn.expand("$VIMRUNTIME/lua"),
+						vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
+						vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
+					},
 				},
 			},
 		},

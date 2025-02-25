@@ -29,6 +29,13 @@ return {
 			end,
 			desc = "Telescope: Search files",
 		},
+		{
+			";b",
+			function()
+				require("telescope.builtin").buffers()
+			end,
+			desc = "Telescope: Buffers",
+		},
 	},
 	config = function()
 		local telescope = require("telescope")

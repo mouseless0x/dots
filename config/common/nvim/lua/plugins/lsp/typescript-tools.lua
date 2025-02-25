@@ -15,6 +15,12 @@ return {
 					"<cmd>TSToolsRemoveUnusedImports<cr>",
 					{ buffer = bufnr, desc = "Remove unused imports" }
 				)
+				vim.keymap.set(
+					"n",
+					"<leader>ti",
+					"<cmd>TSToolsAddMissingImports<cr>",
+					{ buffer = bufnr, desc = "Add missing imports" }
+				)
 			end,
 			settings = {
 				tsserver_file_preferences = {

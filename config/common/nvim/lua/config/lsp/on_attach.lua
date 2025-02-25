@@ -8,6 +8,19 @@ M.on_attach = function(client, bufnr)
 		vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 	end
 
+	local function filtered_code_action()
+		vim.lsp.buf.code_action({
+			filter = function(action)
+				local title = action.title
+
+				return title ~= "Move to a new file"
+					and title ~= "Move to file"
+					and title ~= "Infer function return type"
+			end,
+			apply = true, -- Automatically apply the action if there's only one
+		})
+	end
+
 	vim.keymap.set("i", "gp", function()
 		vim.lsp.buf.signature_help()
 	end, { buffer = true })
@@ -24,7 +37,7 @@ M.on_attach = function(client, bufnr)
 	nmap("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 
 	nmap("gk", vim.diagnostic.open_float, "Open Diagnostic Float")
-	nmap("gl", vim.lsp.buf.code_action, "Open Code Action Float")
+	nmap("gl", filtered_code_action, "Open Filtered Code Action")
 
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 	nmap("gs", vim.lsp.buf.signature_help, "Signature Documentation")
