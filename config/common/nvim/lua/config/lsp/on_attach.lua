@@ -16,6 +16,8 @@ M.on_attach = function(client, bufnr)
 				return title ~= "Move to a new file"
 					and title ~= "Move to file"
 					and title ~= "Infer function return type"
+					and title ~= "Convert to named function"
+					and title ~= "Convert to anonymous function"
 			end,
 			apply = true, -- Automatically apply the action if there's only one
 		})

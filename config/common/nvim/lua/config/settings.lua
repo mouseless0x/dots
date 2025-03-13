@@ -43,11 +43,18 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- Temp
+-- vim.opt.timeout = true
+-- vim.opt.timeoutlen = 1000
+-- vim.opt.ttimeout = true
+-- vim.opt.ttimeoutlen = 10
+
 vim.opt.foldcolumn = "1"
 
 -- Tabs and spacing for specific filetypes.
 vim.api.nvim_command("autocmd BufNewFile,BufRead *.sql setlocal tabstop=2 shiftwidth=2 expandtab")
 vim.api.nvim_command("autocmd BufNewFile,BufRead *.tsx setlocal tabstop=2 shiftwidth=2 expandtab")
+-- vim.api.nvim_command("autocmd BufNewFile,BufRead *.ts setlocal tabstop=2 shiftwidth=2 expandtab")
 
 -- Highlight text when it is yanked.
 local augroup = vim.api.nvim_create_augroup

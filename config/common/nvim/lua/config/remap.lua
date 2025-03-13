@@ -35,3 +35,7 @@ vim.keymap.set("v", "<C-c>", '"+y:nohl<CR>', { silent = true, noremap = true })
 -- Remap swap capitalization to ±
 vim.keymap.set("n", "±", "~")
 vim.keymap.set("v", "±", "~")
+
+-- Quickfix movement
+vim.keymap.set("n", "<C-n>", ":cnext<CR>", { silent = true })
+vim.keymap.set("n", "<C-p>", ":cprevious<CR>", { silent = true })

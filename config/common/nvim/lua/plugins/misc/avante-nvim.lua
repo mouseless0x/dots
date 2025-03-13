@@ -4,20 +4,20 @@ return {
 	lazy = false,
 	opts = {
 		behaviour = {
-			auto_suggestions = true,
+			auto_suggestions = false,
 			auto_set_highlight_group = true,
 			auto_set_keymaps = true,
 			auto_apply_diff_after_generation = false,
 			support_paste_from_clipboard = false,
 			minimize_diff = true,
 			enable_token_counting = true,
-			enable_cursor_planning_mode = true,
+			enable_cursor_planning_mode = false,
 		},
 		hints = { enabled = false },
 		auto_suggest_provider = "claude",
 		-- Provider settings
 		provider = "claude",
-		cursor_applying_provider = "groq",
+		-- cursor_applying_provider = "groq",
 		-- Providers
 		claude = {
 			endpoint = "https://api.anthropic.com",
@@ -29,7 +29,7 @@ return {
 		openai = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
 			endpoint = "https://api.openai.com/v1",
-			model = "o3-mini",
+			-- model = "o3-mini-2025-01-31",
 			timeout = 30000,
 			temperature = 0,
 			max_tokens = 16384,
