@@ -3,20 +3,9 @@ return {
 	event = "VeryLazy",
 	lazy = false,
 	opts = {
-		hints = { enabled = true },
 		provider = "claude",
 		claude = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
-		},
-		windows = {
-			position = "right",
-			wrap = true,
-			width = 40,
-			sidebar_header = {
-				enabled = false,
-				align = "right",
-				rounded = false,
-			},
 		},
 	},
 	build = ":AvanteBuild source=false",

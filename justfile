@@ -2,7 +2,7 @@
 # install-all: tmux alacritty starship bin yabai nvim fish
 
 common: tmux alacritty starship fish bin nvim
-linux: common fonts-linux hyprland waybar
+linux: common fonts-linux hyprland waybar xdg #linux-remap
 osx: common fonts-osx yabai
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
@@ -52,6 +52,13 @@ hyprland:
 waybar:
     rm -rf ~/.config/waybar
     cp -R ./config/linux/waybar ~/.config
+
+xdg:
+    rm -rf ~/.config/user-dirs.dirs
+    cp -R ./config/linux/user-dirs.dirs ~/.config
+
+linux-remap:
+    cp -R ./config/linux/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/remap_caps.json ./config/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 # /*                         OSX                                */
