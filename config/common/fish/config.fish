@@ -33,10 +33,14 @@ if status is-interactive
     fish_add_path ~/.foundry/bin/
     fish_add_path ~/.cargo/bin
     fish_add_path ~/.local/bin
+    fish_add_path ~/.cargo/bin
+    fish_add_path ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+
+    # env vars
+    set -gx EDITOR "nvim"
+    set -gx VISUAL $EDITOR
 
     starship init fish | source
 end
-
-fish_add_path -a /Users/mous/.foundry/bin
 
 fish_add_path -a /Users/mous/.foundry/bin

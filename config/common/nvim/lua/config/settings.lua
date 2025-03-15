@@ -1,5 +1,8 @@
 vim.opt.guicursor = "n:block-blinkon500,i:hor20"
 
+-- Copy to system clipboard
+vim.api.nvim_set_option("clipboard", "unnamed")
+
 -- Show line num (+ relative line num).
 vim.opt.number = true
 vim.opt.relativenumber = true
