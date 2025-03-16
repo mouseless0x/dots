@@ -1,61 +1,97 @@
 * {
   all: unset;
   font-family: sans-serif;
+  transition: 0.1s;
 }
 
 #window {
-  background: rgba(30, 30, 46, 0.7);
+  background-color: rgba(26, 27, 38, 0.75);
   border-radius: 8px;
+  border: 1px solid rgba(24, 25, 38, 0.9);
+  padding: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-#entry {
+#input {
+  background-color: rgba(36, 40, 59, 0.4);
+  border-radius: 4px;
+  margin: 4px;
   padding: 8px 12px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
+  font-size: 14px;
+  color: #c0caf5;
+  box-shadow: none;
+  border: 1px solid rgba(24, 25, 38, 0.9);
+  border-bottom: 2px solid rgba(24, 25, 38, 0.9);
 }
 
+#input:focus {
+  border-bottom: 2px solid rgba(122, 162, 247, 0.8);
+}
+
+/* Main container for results */
 #main {
-  background: transparent;
+  background-color: rgb(26, 27, 38);
+  border-radius: 4px;
+  margin-top: 4px;
+  border: 1px solid rgba(24, 25, 38, 0.9);
 }
 
+/* Alternative list selector */
 box#main {
-  background: transparent;
-  padding: 0;
+  background-color: rgb(26, 27, 38);
+  margin: 4px;
+  padding: 4px;
+  border-radius: 4px;
 }
 
-list {
-  background: transparent;
+/* List widget */
+#list, list {
+  background-color: rgb(26, 27, 38);
+  margin: 4px;
+  border-radius: 4px;
   padding: 4px;
 }
 
-#plugin {
-  display: none;
-}
-
-#match {
-  padding: 4px 8px;
+/* Individual entries */
+#entry {
   border-radius: 4px;
-  margin-bottom: 4px;
+  padding: 6px 8px;
+  margin: 4px 0;
+  background-color: rgb(36, 40, 59);
+  border: 1px solid rgba(24, 25, 38, 0.9);
 }
 
-#match:selected {
-  background: rgba(147, 153, 178, 0.5);
+#entry:selected {
+  background-color: rgb(65, 72, 104);
+  border-left: 2px solid #7aa2f7;
 }
 
-#match-title {
-  color: #ffffff;
-  font-size: 14px;
+#entry-text, #match-title {
+  color: #c0caf5;
+  font-size: 13px;
 }
 
-#match-desc {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
+#entry-text:selected, #match-title:selected {
+  color: #c0caf5;
 }
 
+#entry-desc, #match-desc {
+  color: #a9b1d6;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+/* Hide all icons */
+#entry-icon, image, #match image {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Hide plugin info */
 #plugin-info {
-  display: none;
-}
-
-#entry image, #match image {
-  display: none;
+  opacity: 0;
+  margin: 0;
 }

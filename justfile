@@ -73,6 +73,9 @@ keyd:
 anyrun:
     mkdir -p ~/.config/anyrun
     cp -R ./config/linux/anyrun/* ~/.config/anyrun/
+    # Ensure file permissions are correct
+    chmod 644 ~/.config/anyrun/style.css
+    chmod 644 ~/.config/anyrun/config.ron
     echo "Anyrun configuration installed"
 
 linux-remap:
