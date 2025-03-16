@@ -5,7 +5,7 @@ common: tmux alacritty starship fish bin nvim
 # Define OS-specific variable
 os := `uname`
 
-linux: common fonts-linux hyprland waybar xdg keyd #linux-remap
+linux: common fonts-linux hyprland waybar xdg keyd anyrun #linux-remap
 osx: common fonts-osx yabai
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
@@ -69,6 +69,11 @@ keyd:
     sudo cp -R ./config/linux/keyd/default.conf /etc/keyd/
     sudo systemctl enable --now keyd || echo "keyd service already running"
     echo "Caps Lock has been remapped to Alt"
+
+anyrun:
+    mkdir -p ~/.config/anyrun
+    cp -R ./config/linux/anyrun/* ~/.config/anyrun/
+    echo "Anyrun configuration installed"
 
 linux-remap:
     cp -R ./config/linux/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/remap_caps.json ./config/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/

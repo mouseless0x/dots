@@ -1,0 +1,61 @@
+* {
+  all: unset;
+  font-family: sans-serif;
+}
+
+#window {
+  background: rgba(30, 30, 46, 0.7);
+  border-radius: 8px;
+}
+
+#entry {
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+}
+
+#main {
+  background: transparent;
+}
+
+box#main {
+  background: transparent;
+  padding: 0;
+}
+
+list {
+  background: transparent;
+  padding: 4px;
+}
+
+#plugin {
+  display: none;
+}
+
+#match {
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+#match:selected {
+  background: rgba(147, 153, 178, 0.5);
+}
+
+#match-title {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+#match-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+
+#plugin-info {
+  display: none;
+}
+
+#entry image, #match image {
+  display: none;
+}
