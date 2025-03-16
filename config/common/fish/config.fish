@@ -35,6 +35,7 @@ if status is-interactive
     fish_add_path ~/.local/bin
     fish_add_path ~/.cargo/bin
     fish_add_path ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+    fish_add_path ~/.npm-global/bin
 
     # env vars
     set -gx EDITOR "nvim"
