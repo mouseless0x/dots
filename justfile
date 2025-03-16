@@ -2,6 +2,9 @@
 # install-all: tmux alacritty starship bin yabai nvim fish
 
 common: tmux alacritty starship fish bin nvim
+# Define OS-specific variable
+os := `uname`
+
 linux: common fonts-linux hyprland waybar xdg #linux-remap
 osx: common fonts-osx yabai
 
@@ -12,6 +15,7 @@ osx: common fonts-osx yabai
 # Install tmux configuration
 tmux:
   cp -r ./config/common/tmux ~/.config
+  if [ "{{os}}" = "Darwin" ]; then echo "Using macOS tmux plugin path"; else echo "Using Linux tmux plugin path"; fi
 
 # Install alacritty configuration
 alacritty:
@@ -48,10 +52,13 @@ fonts-linux:
 hyprland:
     rm -rf ~/.config/hypr
     cp -R ./config/linux/hypr/ ~/.config/
+    hyprctl reload || echo "Hyprland not running, skipping reload"
 
 waybar:
     rm -rf ~/.config/waybar
     cp -R ./config/linux/waybar ~/.config
+    pkill waybar || echo "Waybar not running, skipping kill"
+    waybar &
 
 xdg:
     rm -rf ~/.config/user-dirs.dirs
