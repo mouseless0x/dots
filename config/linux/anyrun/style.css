@@ -28,35 +28,19 @@
   border-bottom: 2px solid rgba(122, 162, 247, 0.8);
 }
 
-/* Main container for results */
 #main {
   background-color: rgb(26, 27, 38);
   border-radius: 4px;
   margin-top: 4px;
   border: 1px solid rgba(24, 25, 38, 0.9);
+  min-height: 0;
+  padding: 0;
 }
 
-/* Alternative list selector */
-box#main {
-  background-color: rgb(26, 27, 38);
-  margin: 4px;
-  padding: 4px;
-  border-radius: 4px;
-}
-
-/* List widget */
-#list, list {
-  background-color: rgb(26, 27, 38);
-  margin: 4px;
-  border-radius: 4px;
-  padding: 4px;
-}
-
-/* Individual entries */
 #entry {
   border-radius: 4px;
   padding: 6px 8px;
-  margin: 4px 0;
+  margin: 4px;
   background-color: rgb(36, 40, 59);
   border: 1px solid rgba(24, 25, 38, 0.9);
 }
@@ -66,32 +50,20 @@ box#main {
   border-left: 2px solid #7aa2f7;
 }
 
-#entry-text, #match-title {
+#entry-text {
   color: #c0caf5;
   font-size: 13px;
 }
 
-#entry-text:selected, #match-title:selected {
+#entry-text:selected {
   color: #c0caf5;
 }
 
-#entry-desc, #match-desc {
-  color: #a9b1d6;
-  font-size: 11px;
-  margin-top: 2px;
-}
-
 /* Hide all icons */
-#entry-icon, image, #match image {
+#entry-icon, image {
   opacity: 0;
   padding: 0;
   margin: 0;
   min-width: 0;
   min-height: 0;
-}
-
-/* Hide plugin info */
-#plugin-info {
-  opacity: 0;
-  margin: 0;
 }
