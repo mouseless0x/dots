@@ -4,11 +4,12 @@ return {
 	lazy = false,
 	opts = {
 		behaviour = {
+			enable_claude_text_editor_tool_mode = true,
 			auto_suggestions = false,
 			auto_set_highlight_group = true,
 			auto_set_keymaps = true,
 			auto_apply_diff_after_generation = false,
-			support_paste_from_clipboard = false,
+			support_paste_from_clipboard = true,
 			minimize_diff = true,
 			enable_token_counting = true,
 			enable_cursor_planning_mode = false,
@@ -25,6 +26,7 @@ return {
 			model = "claude-3-7-sonnet-20250219",
 			temperature = 0,
 			max_tokens = 16384,
+			disabled_tools = { "python" },
 		},
 		openai = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
@@ -44,14 +46,6 @@ return {
 				max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
 			},
 		},
-		-- Daul Boost
-		dual_boost = {
-			enabled = false,
-			first_provider = "openai",
-			second_provider = "claude",
-			prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
-			timeout = 60000, -- Timeout in milliseconds
-		},
 		-- Tools
 		web_search_engine = {
 			providers = {
@@ -62,6 +56,9 @@ return {
 		},
 		rag_service = {
 			enabeld = true,
+		},
+		mappings = {
+			select_model = "<leader>am",
 		},
 	},
 	build = "make",

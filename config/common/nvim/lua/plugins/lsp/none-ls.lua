@@ -34,7 +34,7 @@ return {
 					formatting.biome,
 					formatting.forge_fmt,
 					formatting.stylua,
-					formatting.rustfmt,
+					--formatting.rustfmt,
 				},
 
 				-- configure format on save
@@ -47,7 +47,7 @@ return {
 							-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
 							-- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
 							-- vim.lsp.buf.formatting_sync({ async = false })
-                vim.lsp.buf.format({ async = false })
+							vim.lsp.buf.format({ async = false })
 						end,
 					})
 				end,
