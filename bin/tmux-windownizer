@@ -3,7 +3,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/projects ~/work/pimlico ~/work/mev -mindepth 1 -maxdepth 1 -type d | fzf)
+    export FZF_DEFAULT_COMMAND="find ~/projects ~/work/pimlico ~/work/mev -mindepth 1 -maxdepth 1 -type d"
+    export FZF_DEFAULT_OPTS="--bind='j:down,k:up,ctrl-j:down,ctrl-k:up,?:toggle-preview' --layout=reverse --border --preview='ls -la {}' --preview-window=right:50% --height=40%"
+    selected=$(fzf)
 fi
 
 if [[ -z $selected ]];
