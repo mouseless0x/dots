@@ -2,6 +2,9 @@ return {
 	"pmizio/typescript-tools.nvim",
 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	config = function()
+		-- Import utilities from separate file
+		local ts_utils = require("plugins.lsp.ts-utils")
+
 		require("typescript-tools").setup({
 			on_attach = function(client, bufnr)
 				-- this is important, otherwise tsserver will format ts/js
@@ -23,6 +26,14 @@ return {
 					"<leader>ti",
 					"<cmd>TSToolsAddMissingImports<cr>",
 					{ buffer = bufnr, desc = "Add missing imports" }
+				)
+				
+				-- Add custom function to convert parameters to object pattern
+				vim.keymap.set(
+					"n",
+					"<leader>to",
+					ts_utils.convert_to_object_params,
+					{ buffer = bufnr, desc = "Convert parameters to object pattern" }
 				)
 			end,
 			settings = {
