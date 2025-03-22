@@ -8,7 +8,10 @@ return {
 				-- files which we *really* don't want.
 				client.server_capabilities.documentFormattingProvider = false
 
-				-- remappings
+				-- Call the default on_attach function
+				require("config.lsp.on_attach").on_attach(client, bufnr)
+
+				-- typescript-specific remappings
 				vim.keymap.set(
 					"n",
 					"<leader>tc",

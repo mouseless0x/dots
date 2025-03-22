@@ -39,3 +39,6 @@ vim.keymap.set("v", "±", "~")
 -- Quickfix movement
 vim.keymap.set("n", "<C-n>", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<C-p>", ":cprevious<CR>", { silent = true })
+
+-- Visual mode replacement for selected text
+vim.keymap.set("v", "<leader>r", [["hy:%s/\V<C-r>h/<C-r>h/g<Left><Left>]], { noremap = true })
