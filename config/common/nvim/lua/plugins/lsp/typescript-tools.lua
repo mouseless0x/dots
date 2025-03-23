@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	config = function()
 		-- Import utilities from separate file
-		local ts_utils = require("plugins.lsp.ts-utils")
+		local ts_utils = require("config.utils.ts-utils")
 
 		require("typescript-tools").setup({
 			on_attach = function(client, bufnr)
