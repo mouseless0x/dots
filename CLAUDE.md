@@ -4,7 +4,6 @@
 - Install all configs: `just common` (or `just linux` or `just osx`)
 - Install specific config: `just nvim`, `just fish`, `just tmux`, etc.
 - Neovim formatter: `<leader>f` (format current buffer)
-- Claude Code: `<leader>ac` (toggle Claude Code terminal)
 
 ## Code Style Guidelines
 - **Indentation**: 4 spaces default, 2 spaces for .tsx, .sql files

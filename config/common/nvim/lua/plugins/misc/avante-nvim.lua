@@ -26,7 +26,7 @@ return {
 			model = "claude-3-7-sonnet-20250219",
 			temperature = 0,
 			max_tokens = 16384,
-			disabled_tools = { "python" },
+			-- disabled_tools = { "python" },
 		},
 		openai = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
