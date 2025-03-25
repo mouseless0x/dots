@@ -8,39 +8,39 @@ My cross-platform development environment configuration files.
 
 ### Terminal
 
-- [alacritty](https://github.com/alacritty/alacritty) - GPU-accelerated terminal emulator
-- [fish](https://fishshell.com/) - User-friendly shell
-    - [fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-- [starship.rs](https://starship.rs/) - Cross-shell prompt
-- [tmux](https://github.com/tmux/tmux/wiki) - Terminal multiplexer
-    - [tpm](https://github.com/tmux-plugins/tpm) - Plugin manager
-- [fzf](https://github.com/junegunn/fzf) - Command-line fuzzy finder
+- [alacritty](https://github.com/alacritty/alacritty)
+- [fish](https://fishshell.com/)
+    - [fisher](https://github.com/jorgebucaran/fisher)
+- [starship.rs](https://starship.rs/)
+- [tmux](https://github.com/tmux/tmux/wiki)
+    - [tpm](https://github.com/tmux-plugins/tpm)
+- [fzf](https://github.com/junegunn/fzf)
 
 ### Editor
 
-- [neovim](https://github.com/neovim/neovim) - Hyperextensible Vim-based editor
+- [neovim](https://github.com/neovim/neovim)
 
 ### CLI Tools
 
-- [lazygit](https://github.com/jesseduffield/lazygit) - Terminal UI for git
-- [just](https://github.com/casey/just) - Command runner
+- [lazygit](https://github.com/jesseduffield/lazygit)
+- [just](https://github.com/casey/just)
 
 ### Development
 
-- [foundry](https://github.com/foundry-rs) - Ethereum development toolkit
-- [huff-rs](https://github.com/huff-language/huff-rs) - Low-level Ethereum programming language
+- [foundry](https://github.com/foundry-rs)
+- [huff-rs](https://github.com/huff-language/huff-rs)
 
 ## macOS Specific
 
-- [yabai](https://github.com/koekeishiya/yabai) - Tiling window manager
-- [skhd](https://github.com/koekeishiya/skhd) - Hotkey daemon
+- [yabai](https://github.com/koekeishiya/yabai)
+- [skhd](https://github.com/koekeishiya/skhd)
 
 ## Linux Specific
 
-- [hyprland](https://hyprland.org/) - Dynamic tiling Wayland compositor
-- [waybar](https://github.com/Alexays/Waybar) - Wayland bar
-- [anyrun](https://github.com/Kirottu/anyrun) - Wayland launcher
-- [keyd](https://github.com/rvaiya/keyd) - Key remapping daemon
+- [hyprland](https://hyprland.org/)
+- [waybar](https://github.com/Alexays/Waybar)
+- [anyrun](https://github.com/Kirottu/anyrun)
+- [keyd](https://github.com/rvaiya/keyd)
 
 # Installation
 
