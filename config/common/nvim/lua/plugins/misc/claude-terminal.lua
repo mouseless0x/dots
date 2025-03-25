@@ -17,7 +17,7 @@ return {
         local Terminal = require("toggleterm.terminal").Terminal
         local claude_term = Terminal:new({
             cmd = "claude",
-            dir = "~",
+            dir = vim.fn.getcwd(),
             direction = "float",
             count = 1,
         })
