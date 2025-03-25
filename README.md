@@ -1,5 +1,3 @@
-# Dotfiles
-
 My dots
 
 ## Cross-Platform
