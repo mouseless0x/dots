@@ -1,8 +1,6 @@
 # Dotfiles
 
-My cross-platform development environment configuration files.
-
-# Dependencies
+My dots
 
 ## Cross-Platform
 
@@ -25,12 +23,7 @@ My cross-platform development environment configuration files.
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [just](https://github.com/casey/just)
 
-### Development
-
-- [foundry](https://github.com/foundry-rs)
-- [huff-rs](https://github.com/huff-language/huff-rs)
-
-## macOS Specific
+## OSX Specific
 
 - [yabai](https://github.com/koekeishiya/yabai)
 - [skhd](https://github.com/koekeishiya/skhd)
@@ -44,8 +37,6 @@ My cross-platform development environment configuration files.
 
 # Installation
 
-## Full Installation
-
 Cross-platform configs:
 ```bash
 just common
@@ -56,19 +47,16 @@ OS-specific configs:
 # Linux
 just linux
 
-# macOS
+# OSX
 just osx
 ```
 
-## Individual Components
-
-Install specific configs:
 ```bash
 just nvim
 just fish
 just tmux
 just alacritty
-# etc.
+# ...
 ```
 
 # Acknowledgement
