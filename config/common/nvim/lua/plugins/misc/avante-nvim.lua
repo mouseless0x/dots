@@ -16,6 +16,7 @@ return {
 		},
 		hints = { enabled = false },
 		auto_suggest_provider = "claude",
+		position = "left",
 		-- Provider settings
 		provider = "claude",
 		-- cursor_applying_provider = "groq",
