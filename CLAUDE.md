@@ -13,6 +13,7 @@
 - **Naming**: Use snake_case for variable and function names in lua
 - **Comments**: Descriptive comments for config sections
 - **Line Length**: Avoid excessive line wrapping (wrap=false)
+- Don't tag yourself in commit messages
 
 ## Structure
 - `/config/common/` - Cross-platform configurations (nvim, fish, tmux, etc.)
