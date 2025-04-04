@@ -4,6 +4,7 @@ if status is-interactive
 
 	# Fish abbreviations
     abbr -a n nvim
+    abbr -a lg lazygit
 
 	# Use Vim Bindings
 	fish_vi_key_bindings
