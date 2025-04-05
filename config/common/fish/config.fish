@@ -17,6 +17,7 @@ if status is-interactive
 		bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
         bind -M insert \cf "tmux-sessionizer"
         bind -M insert \cw "tmux-windownizer"
+        bind -M insert \cn "nvim"
 	end
 
 	function last_history_item
