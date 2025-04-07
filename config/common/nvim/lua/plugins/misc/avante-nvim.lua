@@ -1,9 +1,5 @@
 return {
-	-- Original repo
-	-- "yetone/avante.nvim",
-	-- Using satwik-kambham's PR #1817 for minimized prompt option
-	"wwingyou/avante.nvim",
-	branch = "main",
+	"yetone/avante.nvim",
 	event = "VeryLazy",
 	lazy = false,
 	opts = {

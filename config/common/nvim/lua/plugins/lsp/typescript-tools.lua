@@ -1,6 +1,6 @@
 return {
 	"pmizio/typescript-tools.nvim",
-	commit = "e0887c1",
+	-- commit = "e0887c1",
 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	config = function()
 		-- Import utilities from separate file
