@@ -1,5 +1,9 @@
 return {
-	"yetone/avante.nvim",
+	-- Original repo
+	-- "yetone/avante.nvim",
+	-- Using satwik-kambham's PR #1817 for minimized prompt option
+	"wwingyou/avante.nvim",
+	branch = "main",
 	event = "VeryLazy",
 	lazy = false,
 	opts = {
@@ -17,10 +21,10 @@ return {
 		hints = { enabled = false },
 		auto_suggest_provider = "claude",
 		windows = {
-			position = "left",
+			position = "right",
 		},
 		-- Provider settings
-		provider = "claude",
+		provider = "openai",
 		-- cursor_applying_provider = "groq",
 		-- Providers
 		claude = {
@@ -34,10 +38,12 @@ return {
 		openai = {
 			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
 			endpoint = "https://api.openai.com/v1",
-			-- model = "o3-mini-2025-01-31",
+			model = "o3-mini-2025-01-31",
 			timeout = 30000,
 			temperature = 0,
-			max_tokens = 16384,
+			max_completion_tokens = 16384,
+			disable_tools = true,
+			-- max_tokens = 16384,
 		},
 		vendors = {
 			--- ... existing vendors

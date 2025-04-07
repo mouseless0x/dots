@@ -82,3 +82,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = "*",
 	command = "%s/\\s\\+$//e",
 })
+
+-- Save all buffers when saving any buffer
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = "*",
+	callback = function()
+		vim.cmd("wall")
+	end,
+})

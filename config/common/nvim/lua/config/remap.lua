@@ -43,5 +43,8 @@ vim.keymap.set("n", "<C-p>", ":cprevious<CR>", { silent = true })
 -- Visual mode replacement for selected text
 vim.keymap.set("v", "<leader>r", [["hy:%s/\V<C-r>h/<C-r>h/g<Left><Left>]], { noremap = true })
 
+-- Open command mode with search and replace for highlighted text
+vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/]], { noremap = true })
+
 -- Format JSON: Replace \" with " and run jq on highlighted text
 vim.keymap.set("v", "<leader>jq", [[:s/\\"/"/g<CR> | :'<,'>!jq .<CR>]], { noremap = true, silent = true })

@@ -1,5 +1,6 @@
 return {
 	"pmizio/typescript-tools.nvim",
+	commit = "e0887c1",
 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	config = function()
 		-- Import utilities from separate file
@@ -27,13 +28,21 @@ return {
 					"<cmd>TSToolsAddMissingImports<cr>",
 					{ buffer = bufnr, desc = "Add missing imports" }
 				)
-				
+
 				-- Add custom function to convert parameters to object pattern
 				vim.keymap.set(
 					"n",
 					"<leader>to",
 					ts_utils.convert_to_object_params,
 					{ buffer = bufnr, desc = "Convert parameters to object pattern" }
+				)
+
+				-- Add custom function to convert parameters to object pattern in visual mode
+				vim.keymap.set(
+					"v",
+					"<leader>to",
+					ts_utils.convert_visual_to_object_params,
+					{ buffer = bufnr, desc = "Convert selected parameters to object pattern" }
 				)
 			end,
 			settings = {
