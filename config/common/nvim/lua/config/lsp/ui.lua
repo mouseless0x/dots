@@ -1,25 +1,23 @@
 M = {}
 M.setup = function()
-	-- Disable annoying code action lightbulb
-	vim.lsp.handlers["textDocument/codeAction"] = vim.lsp.with(vim.lsp.handlers.codeAction, {
-		lightbulb = false,
-	})
+	-- Neovim 0.11+ global option for all floating window borders
+	-- Sets consistent border style across all floating windows
+	vim.opt.winborder = "rounded"
 
-	-- Pretty floaters for all lsp related popups
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-		close_events = { "BufHidden", "InsertLeave" },
-	})
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
+	-- Diagnostic config with improved UI
 	vim.diagnostic.config({
 		float = {
 			border = "rounded",
 		},
+		-- Highlight referenced text in hover (new in 0.11)
+		hover = {
+			show_header = true,
+		},
 	})
+
+	-- Set highlight for hover references (new in 0.11)
+	vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#3b404a" })
+	vim.api.nvim_set_hl(0, "LspReferenceTarget", { bg = "#3b404a" })
 end
 
 return M
