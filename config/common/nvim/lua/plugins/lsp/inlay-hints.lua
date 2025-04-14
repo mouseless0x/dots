@@ -1,2 +1,0 @@
--- Inlay hints disabled
-return {}

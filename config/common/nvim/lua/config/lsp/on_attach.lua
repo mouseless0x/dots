@@ -23,9 +23,6 @@ M.on_attach = function(client, bufnr)
 		})
 	end
 
-	vim.keymap.set("i", "gp", function()
-		vim.lsp.buf.signature_help()
-	end, { buffer = true })
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers["signature_help"], {
 		border = "single",
 		close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
@@ -46,11 +43,13 @@ M.on_attach = function(client, bufnr)
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 	nmap("gs", vim.lsp.buf.signature_help, "Signature Documentation")
 	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-	
+
 	-- LSP Actions
 	nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
-	nmap("<leader>rn", vim.lsp.buf.rename, "Rename")
-	nmap("<leader>fm", function() vim.lsp.buf.format({ async = true }) end, "Format")
+	nmap(",sr", vim.lsp.buf.rename, "Rename")
+	nmap("<leader>fm", function()
+		vim.lsp.buf.format({ async = true })
+	end, "Format")
 
 	if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 		-- Toggle inlay hints

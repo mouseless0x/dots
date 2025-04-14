@@ -1,8 +1,8 @@
 vim.opt.guicursor = "n:block-blinkon500,i:hor20"
 
 -- Copy to system clipboard (only on Linux)
-if vim.fn.has('mac') == 0 then
-    vim.api.nvim_set_option("clipboard", "unnamed")
+if vim.fn.has("mac") == 0 then
+	vim.api.nvim_set_option("clipboard", "unnamed")
 end
 
 -- Show line num (+ relative line num).
