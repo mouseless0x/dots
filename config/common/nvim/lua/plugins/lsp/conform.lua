@@ -4,6 +4,8 @@ return {
 		-- Setup conform
 		require("conform").setup({
 			formatters_by_ft = {
+				sol = { "forge_fmt" },
+				solidity = { "forge_fmt" },
 				lua = { "stylua" },
 				typescript = { "biome" },
 				typescriptreact = { "biome" },
