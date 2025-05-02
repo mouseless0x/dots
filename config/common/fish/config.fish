@@ -19,6 +19,7 @@ if status is-interactive
         bind -M insert \cw "tmux-windownizer"
         bind -M insert \cn "nvim"
         bind -M insert \cl "lazygit"
+        bind -M insert \ck "claude"
 	end
 
 	function last_history_item
