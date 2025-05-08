@@ -12,8 +12,13 @@ yabai -m config right_padding 10
 yabai -m config left_padding 10
 yabai -m config window_gap 10
 
+# Misc
+yabai -m window_opacity_duration 0.2
+yabai -m active_window_opacity 1.00
+yabai -m normal_window_opacity 0.94
+yabai -m window_animation_duration 0.2
+
 # Mouse settings
-# yabai -m config mouse_follows_focus on
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
@@ -21,6 +26,11 @@ yabai -m mouse_drop_action swap
 
 # Ignore for these apps
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|System Preferences|System Settings|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Stickies)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
 # JankyBorders
 borders style=round width=6.0 hidpi=off active_color=0xc0e2e2e3 inactive_color=0xc02c2e34 background_color=0x302c2e34 blur_radius=25 &
