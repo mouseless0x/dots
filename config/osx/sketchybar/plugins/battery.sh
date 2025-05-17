@@ -7,33 +7,12 @@ if [ "$PERCENTAGE" = "" ]; then
   exit 0
 fi
 
-case "${PERCENTAGE}" in
-  100) ICON="􀛨"       # 100% full
-  ;;
-  9[0-9]) ICON="􀺸"    # 90-99%
-  ;;
-  8[0-9]) ICON="􀺶"    # 80-89%
-  ;;
-  7[0-9]) ICON="􀺴"    # 70-79%
-  ;;
-  6[0-9]) ICON="􀺲"    # 60-69%
-  ;;
-  5[0-9]) ICON="􀺰"    # 50-59%
-  ;;
-  4[0-9]) ICON="􀺮"    # 40-49%
-  ;;
-  3[0-9]) ICON="􀺬"    # 30-39%
-  ;;
-  2[0-9]) ICON="􀪫"    # 20-29%
-  ;;
-  1[0-9]) ICON="􀛩"    # 10-19%
-  ;;
-  *) ICON="􀛪"         # <10% critical
-esac
-
+# Use text instead of icon
 if [[ "$CHARGING" != "" ]]; then
-  ICON="􀢋"
+  TEXT="CHG"
+else
+  TEXT="BAT"
 fi
 
-# Update icon and always show percentage label
-sketchybar --set "$NAME" icon="$ICON" label="${PERCENTAGE}%"
+# Update with text label
+sketchybar --set "$NAME" icon="$TEXT" label="${PERCENTAGE}%"
