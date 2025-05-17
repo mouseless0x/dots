@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SPACE_ICONS=("1 " "2" "3" "4" "5" "Q" "W" "E" "R" "T")
+SPACE_ICONS=("1 " "2" "3" "4" "5")
 
 for i in "${!SPACE_ICONS[@]}"
 do
