@@ -17,13 +17,13 @@ MULLVAD_VPN=$(ifconfig | grep -E '^utun[0-9]+:' | while read interface; do
 done)
 
 if [[ $MULLVAD_RUNNING != "" && $MULLVAD_VPN != "" ]]; then
-    ICON=""
+    ICON=""
     LABEL="VPN"
 elif [[ $IP_ADDRESS != "" ]]; then
-    ICON=""
+    ICON="󰖩"
     LABEL=$IP_ADDRESS
 else
-    ICON=""
+    ICON="󰖪"
     LABEL="Not Connected"
 fi
 
