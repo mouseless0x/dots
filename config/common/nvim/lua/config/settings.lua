@@ -14,6 +14,9 @@ vim.filetype.add({
 	extension = {
 		mdx = "mdx",
 	},
+	filename = {
+		["sketchybarrc"] = "bash",
+	},
 })
 
 -- Show filename.

@@ -6,7 +6,7 @@ common: tmux alacritty starship fish bin nvim
 os := `uname`
 
 linux: common fonts-linux hyprland waybar xdg keyd anyrun #linux-remap
-osx: common fonts-osx yabai
+osx: common fonts-osx yabai sketchybar
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 # /*                       COMMON                               */
@@ -91,5 +91,10 @@ fonts-osx:
 
 # yabai + skhd
 yabai:
-  cp -r ./config/osx/yabai ~/.config/yabai
-  cp -r ./config/osx/skhd ~/.config/skhd
+  cp -r ./config/osx/yabai ~/.config
+  cp -r ./config/osx/skhd ~/.config
+
+# sketchybar
+sketchybar:
+  rm -rf ~/config/sketchybar
+  cp -r ./config/osx/sketchybar ~/.config
