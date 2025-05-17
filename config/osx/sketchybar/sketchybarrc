@@ -40,6 +40,8 @@ source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/ip_address.sh"
 source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/ram.sh"
+source "$ITEM_DIR/cpu.sh"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 
