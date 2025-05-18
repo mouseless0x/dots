@@ -9,7 +9,7 @@ fi
 
 # Use text instead of icon
 if [[ "$CHARGING" != "" ]]; then
-  TEXT="CHG"
+  TEXT="AC"
 else
   TEXT="BAT"
 fi
