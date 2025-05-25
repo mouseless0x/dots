@@ -6,4 +6,5 @@ sketchybar --add item  ip_address right                              \
                                   script="$PLUGIN_DIR/ip_addresses.sh"      \
                                   update_freq=30                             \
                                   click_script="$PLUGIN_DIR/toggle_ip.sh"    \
+                                  label.drawing=off                          \
            --subscribe ip_address wifi_change
