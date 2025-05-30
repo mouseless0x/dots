@@ -13,6 +13,7 @@ return {
 				javascriptreact = { "biome" },
 				tsx = { "biome" },
 				jsx = { "biome" },
+				toml = { "taplo" },
 			},
 		})
 
