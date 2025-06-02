@@ -20,7 +20,7 @@ return {
 			position = "right",
 		},
 		-- Provider settings
-		provider = "openai",
+		provider = "claude",
 		-- cursor_applying_provider = "groq",
 		-- Providers
 		claude = {
@@ -40,16 +40,6 @@ return {
 			max_completion_tokens = 16384,
 			disable_tools = true,
 			-- max_tokens = 16384,
-		},
-		vendors = {
-			--- ... existing vendors
-			groq = {
-				__inherited_from = "openai",
-				api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.groq",
-				endpoint = "https://api.groq.com/openai/v1/",
-				model = "llama-3.3-70b-versatile",
-				max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
-			},
 		},
 		-- Tools
 		web_search_engine = {
