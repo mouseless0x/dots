@@ -15,6 +15,41 @@
 - **Line Length**: Avoid excessive line wrapping (wrap=false)
 - Don't tag yourself in commit messages
 
+## Neovim Setup
+
+### Plugin Manager
+- **Lazy.nvim** - Modern plugin manager with lazy loading and automatic installation
+- Plugin lock file: `lazy-lock.json` for version consistency
+
+### Key Bindings
+- **Leader**: Space
+- **Exit insert mode**: `jk` (ESC mapped to backtick)
+- **Window management**: `s` prefix (`sh`/`sv` for splits, `s+hjkl` for navigation)
+- **File navigation**: `;f` (find files), `;r` (live grep), `;b` (buffers)
+- **File explorer**: `-` (opens Oil.nvim in parent directory)
+- **Format**: `<leader>f` (format current buffer)
+- **LSP**: `gd` (definition), `gr` (references), `K` (hover), `gl` (code actions)
+
+### Core Plugins
+- **Navigation**: Telescope (fuzzy finder), Harpoon2 (bookmarks), Oil.nvim (file explorer)
+- **LSP/Completion**: nvim-lspconfig, blink.cmp, conform.nvim (formatting)
+- **Language-specific**: typescript-tools.nvim, rustaceanvim
+- **UI**: tokyonight theme, lualine statusline, neo-tree sidebar
+- **AI Assistants**: avante.nvim (Claude chat), claude-code, super-maven
+- **Git**: gitsigns, lazygit integration
+
+### LSP Configuration
+- **Enabled servers**: lua_ls, bashls, solidity_ls_nomicfoundation, marksman
+- **Formatters**: stylua (Lua), biome (JS/TS), forge_fmt (Solidity), taplo (TOML)
+- **Features**: Inlay hints, code actions, diagnostics, auto-format on save
+
+### Editor Settings
+- **Indentation**: 4 spaces default, 2 spaces for .tsx/.sql
+- **Line numbers**: Relative + absolute hybrid
+- **Persistent undo**: Stored in `~/.cache/nvim/undodir`
+- **Auto-save**: All buffers when saving any buffer
+- **Trim whitespace**: Automatic on save
+
 ## Structure
 - `/config/common/` - Cross-platform configurations (nvim, fish, tmux, etc.)
 - `/config/linux/` - Linux-specific configs (hyprland, waybar)
