@@ -32,7 +32,7 @@
 
 ### Core Plugins
 - **Navigation**: Telescope (fuzzy finder), Harpoon2 (bookmarks), Oil.nvim (file explorer)
-- **LSP/Completion**: nvim-lspconfig, blink.cmp, conform.nvim (formatting)
+- **LSP/Completion**: blink.cmp, conform.nvim (formatting)
 - **Language-specific**: typescript-tools.nvim, rustaceanvim
 - **UI**: tokyonight theme, lualine statusline, neo-tree sidebar
 - **AI Assistants**: avante.nvim (Claude chat), claude-code, super-maven

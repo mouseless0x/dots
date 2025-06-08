@@ -4,6 +4,7 @@ return {
 		-- Setup conform
 		require("conform").setup({
 			formatters_by_ft = {
+				rust = { "rustfmt" },
 				sol = { "forge_fmt" },
 				solidity = { "forge_fmt" },
 				lua = { "stylua" },
