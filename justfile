@@ -1,7 +1,7 @@
 # Install everything
 # install-all: tmux alacritty starship bin yabai nvim fish
 
-common: tmux alacritty starship fish bin nvim
+common: tmux alacritty starship fish bin nvim lazygit
 # Define OS-specific variable
 os := `uname`
 
@@ -40,6 +40,16 @@ bin:
 nvim:
   rm -rf ~/.config/nvim
   cp -R ./config/common/nvim ~/.config
+
+# Install lazygit configuration
+lazygit:
+  if [ "{{os}}" = "Darwin" ]; then \
+    mkdir -p ~/Library/Application\ Support/lazygit && \
+    cp ./config/common/lazygit/config.yml ~/Library/Application\ Support/lazygit/; \
+  else \
+    mkdir -p ~/.config/lazygit && \
+    cp ./config/common/lazygit/config.yml ~/.config/lazygit/; \
+  fi
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 # /*                        LINUX                               */
