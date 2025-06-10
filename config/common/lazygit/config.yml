@@ -1,12 +1,13 @@
 customCommands:
-  - key: '<c-a>'
-    description: 'Pick AI commit'
-    command: 'aicommit2'
-    context: 'files'
-    subprocess: true
-    showOutput: true
-  - key: '<c-n>'
-    description: 'Pick AI commit (no verify)'
-    command: 'aicommit2 --no-verify'
-    context: 'files'
-    subprocess: true
+  - key: "<c-a>" # ctrl + a
+    description: "pick AI commit"
+    command: 'git commit -m "{{.Form.Msg}}"'
+    context: "files"
+    prompts:
+      - type: "menuFromCommand"
+        title: "ai Commits"
+        key: "Msg"
+        command: "bunx bunnai"
+        filter: '^(?P<number>\d+)\.\s(?P<message>.+)$'
+        valueFormat: "{{ .message }}"
+        labelFormat: "{{ .number }}: {{ .message | green }}"
