@@ -15,12 +15,14 @@ window-padding-x = 5
 window-padding-y = 5
 window-width = 120
 window-height = 40
+resize-overlay = never
 
 # macOS specific
 macos-option-as-alt = true
 macos-auto-secure-input = true
 macos-icon = holographic
 macos-window-shadow = false
+macos-non-native-fullscreen = true
 gtk-single-instance = false
 
 # Shell integration
