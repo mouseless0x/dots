@@ -1,0 +1,60 @@
+# Font settings
+font-family = BerkeleyMono Nerd Font Mono
+font-size = 17.5
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Italic
+font-thicken = true
+font-thicken-strength = 100
+
+# Window settings
+window-decoration = true
+macos-titlebar-style = hidden
+background-opacity = 0.95
+window-padding-x = 5
+window-padding-y = 5
+window-width = 120
+window-height = 40
+
+# macOS specific
+macos-option-as-alt = true
+macos-auto-secure-input = true
+macos-icon = holographic
+macos-window-shadow = false
+gtk-single-instance = false
+
+# Shell integration
+shell-integration = fish
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# Keybindings
+keybind = cmd+r=reload_config
+
+# Theme - Tokyo Night
+background = #1a1b26
+foreground = #c0caf5
+cursor-color = #c0caf5
+selection-background = #33467c
+selection-foreground = #c0caf5
+
+# Colors
+palette = 0=#15161e
+palette = 1=#f7768e
+palette = 2=#9ece6a
+palette = 3=#e0af68
+palette = 4=#7aa2f7
+palette = 5=#bb9af7
+palette = 6=#7dcfff
+palette = 7=#a9b1d6
+palette = 8=#414868
+palette = 9=#f7768e
+palette = 10=#9ece6a
+palette = 11=#e0af68
+palette = 12=#7aa2f7
+palette = 13=#bb9af7
+palette = 14=#7dcfff
+palette = 15=#c0caf5

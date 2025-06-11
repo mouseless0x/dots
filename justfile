@@ -1,7 +1,7 @@
 # Install everything
 # install-all: tmux alacritty starship bin yabai nvim fish
 
-common: tmux alacritty starship fish bin nvim lazygit
+common: tmux alacritty ghostty starship fish bin nvim lazygit
 # Define OS-specific variable
 os := `uname`
 
@@ -20,6 +20,11 @@ tmux:
 # Install alacritty configuration
 alacritty:
   cp -r ./config/common/alacritty ~/.config
+
+# Install ghostty configuration
+ghostty:
+  mkdir -p ~/.config/ghostty
+  cp ./config/common/ghostty/config ~/.config/ghostty/
 
 # Install starship.rs configuration
 starship:
