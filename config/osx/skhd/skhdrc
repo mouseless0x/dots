@@ -49,4 +49,4 @@ ctrl + alt - q : yabai --stop-service
 shift + alt - q : skhd -k "cmd - q "
 
 # Open New Terminal
-alt - return : open -na alacritty
+alt - return : open -na Ghostty

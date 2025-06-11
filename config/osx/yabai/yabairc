@@ -28,6 +28,10 @@ yabai -m config focus_follows_mouse off
 
 yabai -m mouse_drop_action swap
 
+# Ghostty window rules - treat each window separately
+yabai -m rule --add app="^Ghostty$" manage=on
+yabai -m rule --add app="^Ghostty$" sticky=off
+
 # Ignore for these apps
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
 yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|System Preferences|System Settings|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Stickies)$" manage=off
