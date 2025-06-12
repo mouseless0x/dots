@@ -28,6 +28,10 @@ gtk-single-instance = false
 # Shell integration
 shell-integration = fish
 
+# Desktop notifications
+desktop-notifications = true
+
+
 # Cursor
 cursor-style = block
 cursor-style-blink = false
