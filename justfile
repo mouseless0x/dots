@@ -56,6 +56,10 @@ lazygit:
     cp ./config/common/lazygit/config.yml ~/.config/lazygit/; \
   fi
 
+# Install claude configuration
+claude:
+  set -a; source ./config/common/claude/.env; set +a; bash ./config/common/claude/init.sh
+
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 # /*                        LINUX                               */
 # /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/

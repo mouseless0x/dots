@@ -3,7 +3,23 @@
 ## Commands
 - Install all configs: `just common` (or `just linux` or `just osx`)
 - Install specific config: `just nvim`, `just fish`, `just tmux`, etc.
+- Install Claude MCP servers: `just claude`
 - Neovim formatter: `<leader>f` (format current buffer)
+
+## Claude MCP Setup
+
+### Prerequisites
+1. Create `.env` file in `config/common/claude/` with your GitHub token:
+   ```
+   GITHUB_PERSONAL_ACCESS_TOKEN=your_github_pat_here
+   ```
+
+### Installation
+Run `just claude` to configure the following MCP servers:
+- **GitHub MCP**: Access to GitHub repositories and issues
+- **Filesystem MCP**: Access to `/Users/mous/Work/mev`, `/Users/mous/Work/pimlico`, and `/Users/mous/Projects`
+- **Git MCP**: Git operations in allowed directories
+- **Fetch MCP**: Web fetching capabilities
 
 ## Code Style Guidelines
 - **Indentation**: 4 spaces default, 2 spaces for .tsx, .sql files
