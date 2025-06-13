@@ -1,6 +1,7 @@
 customCommands:
   - key: <c-a>
     description: Pick AI commit (copy)
-    command: mise x node@20 -- aicommit2 -c && pbpaste > .git/LAZYGIT_PENDING_COMMIT && echo
+    command: mise x node@20 -- aicommit2 -c && pbpaste > .git/LAZYGIT_PENDING_COMMIT
     context: files
-    output: terminal
+    subprocess: true
+    showOutput: false
