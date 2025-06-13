@@ -11,6 +11,7 @@ font-thicken-strength = 100
 window-decoration = true
 macos-titlebar-style = hidden
 background-opacity = 0.95
+background-blur-radius = 5
 window-padding-x = 5
 window-padding-y = 5
 window-width = 120
@@ -30,7 +31,7 @@ shell-integration = fish
 
 # Desktop notifications
 desktop-notifications = true
-
+bell-features = system
 
 # Cursor
 cursor-style = block
