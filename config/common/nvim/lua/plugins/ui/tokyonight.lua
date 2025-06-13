@@ -8,6 +8,7 @@ return {
 
 			on_highlights = function(highlights)
 				highlights.LineNr = { fg = "#4C566A" }
+				highlights.LspInlayHint = { bg = "none", fg = "#565f89" }
 			end,
 		})
 
