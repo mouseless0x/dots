@@ -1,7 +1,7 @@
 # Install everything
 # install-all: tmux alacritty starship bin yabai nvim fish
 
-common: tmux alacritty ghostty starship fish bin nvim lazygit
+common: tmux alacritty ghostty starship fish bin nvim lazygit claude
 # Define OS-specific variable
 os := `uname`
 
