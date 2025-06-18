@@ -52,10 +52,6 @@ M.on_attach = function(client, bufnr)
 		vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 	end
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers["signature_help"], {
-		border = "single",
-		close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
-	})
 
 	-- Diagnostic mappings
 	nmap("]d", vim.diagnostic.goto_next, "Next diagnostic")
