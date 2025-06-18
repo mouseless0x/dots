@@ -23,23 +23,28 @@ return {
 		provider = "claude",
 		-- cursor_applying_provider = "groq",
 		-- Providers
-		claude = {
-			endpoint = "https://api.anthropic.com",
-			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
-			model = "claude-3-7-sonnet-20250219",
-			temperature = 0,
-			max_tokens = 16384,
-			-- disabled_tools = { "python" },
-		},
-		openai = {
-			api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
-			endpoint = "https://api.openai.com/v1",
-			model = "o3-mini-2025-01-31",
-			timeout = 30000,
-			temperature = 0,
-			max_completion_tokens = 16384,
-			disable_tools = true,
-			-- max_tokens = 16384,
+		providers = {
+			claude = {
+				endpoint = "https://api.anthropic.com",
+				api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.anthropic",
+				model = "claude-3-7-sonnet-20250219",
+				extra_request_body = {
+					temperature = 0,
+					max_tokens = 16384,
+				},
+				-- disabled_tools = { "python" },
+			},
+			openai = {
+				api_key_name = "cmd:cat " .. os.getenv("HOME") .. "/.openai",
+				endpoint = "https://api.openai.com/v1",
+				model = "o3-mini-2025-01-31",
+				timeout = 30000,
+				extra_request_body = {
+					temperature = 0,
+					max_completion_tokens = 16384,
+				},
+				disable_tools = true,
+			},
 		},
 		-- Tools
 		web_search_engine = {
