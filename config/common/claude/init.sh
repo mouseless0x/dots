@@ -18,3 +18,7 @@ claude mcp add-json --scope user git '{"type": "stdio", "command": "uvx", "args"
 # Setup Fetch MCP
 claude mcp remove --scope user fetch
 claude mcp add-json --scope user fetch '{"type": "stdio", "command": "uvx", "args": ["mcp-server-fetch"]}'
+
+# Setup Context7 MCP
+claude mcp remove --scope user context7
+claude mcp add-json --scope user context7 '{"type": "stdio", "command": "npx", "args": ["-y", "@upstash/context7-mcp"]}'
