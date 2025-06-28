@@ -45,6 +45,9 @@ if status is-interactive
     set -gx EDITOR "nvim"
     set -gx VISUAL $EDITOR
 
+    # Aliases
+    alias c 'claude --allowedTools "Read Edit Write MultiEdit Glob Grep LS"'
+
     starship init fish | source
 end
 
