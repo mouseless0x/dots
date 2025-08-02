@@ -5,7 +5,7 @@ common: tmux alacritty ghostty starship fish bin nvim lazygit claude
 # Define OS-specific variable
 os := `uname`
 
-linux: common fonts-linux hyprland waybar xdg keyd anyrun #linux-remap
+linux: ensure-packages common fonts-linux hyprland waybar xdg keyd anyrun #linux-remap
 osx: common fonts-osx yabai sketchybar
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
@@ -63,6 +63,10 @@ claude:
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 # /*                        LINUX                               */
 # /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+# Ensure required packages are installed
+ensure-packages:
+    @bash ./config/linux/ensure-packages.sh
 
 fonts-linux:
     rm -rf ~/.local/share/fonts
