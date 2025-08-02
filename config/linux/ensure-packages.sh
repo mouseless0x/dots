@@ -11,7 +11,6 @@ PACKAGES=(
     "hyprland"
     "waybar"
     "keyd"
-    "anyrun"
     "fish"
     "tmux"
     "alacritty"
