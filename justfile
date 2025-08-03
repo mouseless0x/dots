@@ -90,7 +90,6 @@ xdg:
 keyd:
     sudo mkdir -p /etc/keyd
     sudo cp -R ./config/linux/keyd/default.conf /etc/keyd/
-    sudo systemctl enable --now keyd || echo "keyd service already running"
     echo "Caps Lock has been remapped to Alt"
 
 anyrun:
