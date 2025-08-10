@@ -9,7 +9,7 @@
 ## Claude MCP Setup
 
 ### Prerequisites
-1. Create `.env` file in `config/common/claude/` with your GitHub token:
+1. Create `.env` file in `config-common/claude/` with your GitHub token:
    ```
    GITHUB_PERSONAL_ACCESS_TOKEN=your_github_pat_here
    ```
@@ -67,7 +67,8 @@ Run `just claude` to configure the following MCP servers:
 - **Trim whitespace**: Automatic on save
 
 ## Structure
-- `/config/common/` - Cross-platform configurations (nvim, fish, tmux, etc.)
-- `/config/linux/` - Linux-specific configs (hyprland, waybar)
-- `/config/osx/` - macOS-specific configs (yabai, skhd)
+- `/config-common/` - Cross-platform configurations (nvim, fish, tmux, etc.)
+- `/config-linux/` - Linux-specific configs (hyprland, waybar)
+- `/config-osx/` - macOS-specific configs (yabai, skhd)
+- `/fonts/` - Font files
 - `/bin/` - Custom shell scripts
