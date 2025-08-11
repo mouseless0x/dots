@@ -34,7 +34,7 @@ if [ ${#MISSING_PACKAGES[@]} -gt 0 ]; then
     echo -e "${RED}Missing packages:${NC} ${MISSING_PACKAGES[*]}"
     echo -e "${YELLOW}Installing missing packages...${NC}"
     sudo pacman -S --needed "${MISSING_PACKAGES[@]}"
-    
+
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}All packages installed successfully!${NC}"
     else

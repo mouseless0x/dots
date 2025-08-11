@@ -30,8 +30,7 @@ gtk-single-instance = false
 shell-integration = fish
 
 # Desktop notifications
-desktop-notifications = true
-bell-features = system
+desktop-notifications = false
 
 # Cursor
 cursor-style = block
