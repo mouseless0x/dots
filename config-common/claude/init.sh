@@ -23,6 +23,10 @@ claude mcp add-json --scope user fetch '{"type": "stdio", "command": "uvx", "arg
 claude mcp remove --scope user context7
 claude mcp add-json --scope user context7 '{"type": "stdio", "command": "npx", "args": ["-y", "@upstash/context7-mcp"]}'
 
+# Setup Playwright MCP
+claude mcp remove --scope user playwright
+claude mcp add --scope user playwright npx @playwright/mcp@latest
+
 # Configure allowed tools in ~/.claude/settings.json
 SETTINGS="$HOME/.claude/settings.json"
 TOOLS='[
