@@ -1,6 +1,6 @@
 customCommands:
   - key: <c-a>
     description: Pick AI commit (copy)
-    command: mise x node@20 -- aicommit2 -c && pbpaste > .git/LAZYGIT_PENDING_COMMIT
+    command: cat ~/.claude/commands/gen-commit-msg.md | claude --allowedTools 'Bash(git commit -m:*)' -p
     context: files
     output: terminal

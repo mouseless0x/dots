@@ -4,7 +4,6 @@
 - Install all configs: `just common` (or `just linux` or `just osx`)
 - Install specific config: `just nvim`, `just fish`, `just tmux`, etc.
 - Install Claude MCP servers: `just claude`
-- Neovim formatter: `<leader>f` (format current buffer)
 
 ## Claude MCP Setup
 
