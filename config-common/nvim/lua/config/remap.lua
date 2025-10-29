@@ -48,3 +48,15 @@ vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/]], { noremap = true })
 
 -- Format JSON: Replace \" with " and run jq on highlighted text
 vim.keymap.set("v", "<leader>jq", [[:s/\\"/"/g<CR> | :'<,'>!jq .<CR>]], { noremap = true, silent = true })
+
+-- Copy file path with @ prefix
+vim.keymap.set("n", "<leader>yy", function()
+    local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+    if vim.v.shell_error ~= 0 then
+        print("Error: not in a git repository")
+        return
+    end
+    local path = "@" .. vim.fn.expand("%:p"):sub(#vim.trim(git_root) + 2)
+    vim.fn.setreg("+", path)
+    print("Copied: " .. path)
+end, { silent = true })
