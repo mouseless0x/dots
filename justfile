@@ -1,11 +1,11 @@
 # Install everything
 # install-all: tmux alacritty starship bin yabai nvim fish
 
-common: tmux alacritty ghostty starship fish bin nvim lazygit claude
+common: tmux alacritty ghostty starship fish bin nvim lazygit
 # Define OS-specific variable
 os := `uname`
 
-linux: ensure-packages common fonts-linux hyprland waybar xdg keyd anyrun #linux-remap
+linux: ensure-packages common fonts-linux hyprland waybar xdg keyd walker #linux-remap
 osx: common fonts-osx yabai sketchybar
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
@@ -38,7 +38,6 @@ fish:
 
 # Install custom shell scripts
 bin:
-  rm -rf ~/.local/bin
   cp -r ./bin ~/.local/
 
 # Install the nvim configuration
@@ -92,15 +91,13 @@ xdg:
 keyd:
     sudo mkdir -p /etc/keyd
     sudo cp -R ./config-linux/keyd/default.conf /etc/keyd/
+    sudo systemctl enable --now keyd
     echo "Caps Lock has been remapped to Alt"
 
-anyrun:
-    mkdir -p ~/.config/anyrun
-    cp -R ./config-linux/anyrun/* ~/.config/anyrun/
-    # Ensure file permissions are correct
-    chmod 644 ~/.config/anyrun/style.css
-    chmod 644 ~/.config/anyrun/config.ron
-    echo "Anyrun configuration installed"
+walker:
+    elephant service enable
+    systemctl --user enable elephant.service
+    echo "Walker configuration installed"
 
 linux-remap:
     cp -R ./config-linux/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/remap_caps.json ./config/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/

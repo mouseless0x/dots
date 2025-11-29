@@ -30,7 +30,7 @@ My dots
 
 - [hyprland](https://hyprland.org/)
 - [waybar](https://github.com/Alexays/Waybar)
-- [anyrun](https://github.com/Kirottu/anyrun)
+- [walker](https://github.com/abenz1267/walker)
 - [keyd](https://github.com/rvaiya/keyd)
 
 # Installation
