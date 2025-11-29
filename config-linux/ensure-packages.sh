@@ -9,6 +9,9 @@ NC='\033[0m' # No Color
 # Define required packages
 PACKAGES=(
     "hyprland"
+    "hyprpaper"
+    "hypridle"
+    "hyprlock"
     "waybar"
     "keyd"
     "fish"
@@ -17,6 +20,7 @@ PACKAGES=(
     "starship"
     "neovim"
     "lazygit"
+    "wl-clipboard"
 )
 
 echo -e "${YELLOW}Checking for required packages...${NC}"

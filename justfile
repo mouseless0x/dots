@@ -76,6 +76,8 @@ fonts-linux:
 hyprland:
     rm -rf ~/.config/hypr
     cp -R ./config-linux/hypr/ ~/.config/
+    rm -rf ~/.config/wallpapers
+    cp -R ./config-linux/wallpapers ~/.config/
     hyprctl reload || echo "Hyprland not running, skipping reload"
 
 waybar:
