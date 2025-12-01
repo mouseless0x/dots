@@ -4,7 +4,7 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     dirs=""
-    for d in ~/projects ~/work/pimlico ~/work/mev ~/Mev; do
+    for d in ~/projects ~/work/pimlico ~/work/mev ~/mev ~/videos; do
         [ -d "$d" ] && dirs="$dirs $d"
     done
     export FZF_DEFAULT_COMMAND="find $dirs -mindepth 1 -maxdepth 1 -type d 2>/dev/null"

@@ -3,7 +3,11 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    export FZF_DEFAULT_COMMAND="find ~/projects ~/work/pimlico ~/work/mev -mindepth 1 -maxdepth 1 -type d"
+    dirs=""
+    for d in ~/projects ~/work/pimlico ~/work/mev ~/mev ~/videos; do
+        [ -d "$d" ] && dirs="$dirs $d"
+    done
+    export FZF_DEFAULT_COMMAND="find $dirs -mindepth 1 -maxdepth 1 -type d 2>/dev/null"
     export FZF_DEFAULT_OPTS="--bind='j:down,k:up,ctrl-j:down,ctrl-k:up' --layout=reverse --border --height=40%"
     selected=$(fzf)
 fi
