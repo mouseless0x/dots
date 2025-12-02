@@ -1,9 +1,22 @@
 vim.opt.guicursor = "n:block-blinkon500,i:hor20"
 
--- Copy to system clipboard (only on Linux)
-if vim.fn.has("mac") == 0 then
-	vim.api.nvim_set_option("clipboard", "unnamed")
+-- Clipboard: use OSC 52 over SSH, system clipboard locally
+if os.getenv("SSH_CONNECTION") then
+	local osc52 = require("vim.ui.clipboard.osc52")
+	vim.g.clipboard = {
+		name = "OSC 52",
+		copy = {
+			["+"] = osc52.copy("+"),
+			["*"] = osc52.copy("*"),
+		},
+		paste = {
+			["+"] = osc52.paste("+"),
+			["*"] = osc52.paste("*"),
+		},
+	}
 end
+
+vim.opt.clipboard = "unnamedplus"
 
 -- Show line num (+ relative line num).
 vim.opt.number = true
