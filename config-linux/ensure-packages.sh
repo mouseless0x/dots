@@ -21,6 +21,7 @@ PACKAGES=(
     "neovim"
     "lazygit"
     "wl-clipboard"
+    "openssh"
 )
 
 echo -e "${YELLOW}Checking for required packages...${NC}"

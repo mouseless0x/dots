@@ -101,6 +101,15 @@ walker:
     systemctl --user enable elephant.service
     echo "Walker configuration installed"
 
+ssh:
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    cp ./config-linux/ssh/authorized_keys ~/.ssh/
+    chmod 600 ~/.ssh/authorized_keys
+    sudo cp ./config-linux/ssh/sshd_config /etc/ssh/sshd_config
+    sudo systemctl enable --now sshd
+    echo "SSH configured with public key authentication"
+
 linux-remap:
     cp -R ./config-linux/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/remap_caps.json ./config/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/
 
