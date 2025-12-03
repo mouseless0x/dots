@@ -5,6 +5,9 @@ if status is-interactive
 	# Fish abbreviations
     abbr -a n nvim
     abbr -a lg lazygit
+    abbr -a gc "git checkout"
+    abbr -a gp "git pull"
+    abbr -a gpc "gh pr create"
 
 	# Use Vim Bindings
 	fish_vi_key_bindings
