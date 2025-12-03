@@ -29,6 +29,10 @@ gtk-single-instance = false
 # Shell integration
 shell-integration = fish
 
+# Clipboard (OSC 52)
+clipboard-read = allow
+clipboard-write = allow
+
 # Desktop notifications
 desktop-notifications = false
 
