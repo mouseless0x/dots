@@ -5,7 +5,7 @@ common: tmux alacritty ghostty starship fish bin nvim lazygit
 # Define OS-specific variable
 os := `uname`
 
-linux: ensure-packages common fonts-linux hyprland waybar xdg keyd walker #linux-remap
+linux: ensure-packages common fonts-linux hyprland waybar xdg keyd walker npm-linux #linux-remap
 osx: common fonts-osx yabai sketchybar
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
@@ -109,6 +109,11 @@ ssh:
     sudo cp ./config-linux/ssh/sshd_config /etc/ssh/sshd_config
     sudo systemctl enable --now sshd
     echo "SSH configured with public key authentication"
+
+npm-linux:
+    mkdir -p ~/.npm-global
+    npm config set prefix ~/.npm-global
+    echo "npm global prefix set to ~/.npm-global"
 
 linux-remap:
     cp -R ./config-linux/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/remap_caps.json ./config/input-remapper-2/presets/wilba.tech\ wilba.tech\ WT80-A/
