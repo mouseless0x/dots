@@ -110,6 +110,14 @@ ssh:
     sudo systemctl enable --now sshd
     echo "SSH configured with public key authentication"
 
+cloudflared:
+    sudo mkdir -p /etc/cloudflared
+    sudo cp ./config-linux/cloudflared/config.yml.template /etc/cloudflared/config.yml
+    sudo cp ~/.cloudflared/*.json /etc/cloudflared/
+    sudo cloudflared service install
+    sudo systemctl enable --now cloudflared
+    echo "Cloudflared tunnel service installed and running"
+
 npm-linux:
     mkdir -p ~/.npm-global
     npm config set prefix ~/.npm-global
@@ -135,3 +143,12 @@ yabai:
 sketchybar:
   rm -rf ~/config/sketchybar
   cp -r ./config-osx/sketchybar ~/.config
+
+# SSH client config for connecting to lovegun (Linux PC)
+ssh-lovegun:
+    mkdir -p ~/.ssh/config.d
+    chmod 700 ~/.ssh
+    cp ./config-common/ssh/config.d/cloudflare-tunnel ~/.ssh/config.d/
+    chmod 600 ~/.ssh/config.d/*
+    @grep -q "Include config.d/*" ~/.ssh/config 2>/dev/null || echo "Include config.d/*" >> ~/.ssh/config
+    echo "SSH client configured. Connect with: ssh lovegun"

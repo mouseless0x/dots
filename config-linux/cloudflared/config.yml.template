@@ -1,0 +1,7 @@
+tunnel: a6dcb543-d658-4aa4-9924-0b73e2f01c5a
+credentials-file: /etc/cloudflared/a6dcb543-d658-4aa4-9924-0b73e2f01c5a.json
+
+ingress:
+  - hostname: ssh.lovegun.sh
+    service: ssh://localhost:2222
+  - service: http_status:404

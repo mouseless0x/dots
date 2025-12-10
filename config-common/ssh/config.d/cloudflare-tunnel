@@ -1,0 +1,6 @@
+# Cloudflare Tunnel SSH Config
+# Connect to home PC via: ssh lovegun
+Host lovegun
+    HostName ssh.lovegun.sh
+    User mous
+    ProxyCommand cloudflared access ssh --hostname %h
