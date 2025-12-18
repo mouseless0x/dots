@@ -44,6 +44,7 @@ shell-integration-features = no-cursor
 
 # Keybindings
 keybind = cmd+r=reload_config
+keybind = shift+enter=text:\x1b\r # Claude code things
 
 # Theme - Tokyo Night
 background = #1a1b26
