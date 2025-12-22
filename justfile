@@ -57,7 +57,7 @@ lazygit:
 
 # Install claude configuration
 claude:
-  set -a; source ./config-common/claude/.env; set +a; bash ./config-common/claude/init.sh
+  bash ./config-common/claude/init.sh
   mkdir -p ~/.claude/commands
   cp -r ./config-common/claude/commands/* ~/.claude/commands/ 2>/dev/null || true
 
