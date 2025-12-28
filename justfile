@@ -44,6 +44,7 @@ fish:
 # Install custom shell scripts
 bin:
   cp -r ./bin ~/.local/
+  chmod +x ~/.local/bin/*
 
 # Install the nvim configuration
 nvim:
