@@ -57,4 +57,4 @@ if status is-interactive
     starship init fish | source
 end
 
-fish_add_path -a /Users/mous/.foundry/bin
+fish_add_path -a ~/.foundry/bin
