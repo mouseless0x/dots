@@ -15,8 +15,12 @@ osx: common fonts-osx yabai sketchybar
 
 # Install tmux configuration
 tmux:
-  cp -r ./config-common/tmux ~/.config
-  if [ "{{os}}" = "Darwin" ]; then echo "Using macOS tmux plugin path"; else echo "Using Linux tmux plugin path"; fi
+  cp ./config-common/tmux/tmux.conf ~/.tmux.conf
+  if [ "{{os}}" = "Darwin" ]; then \
+    echo "Using macOS tmux plugin path (homebrew)"; \
+  else \
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 2>/dev/null || echo "TPM already installed"; \
+  fi
 
 # Install alacritty configuration
 alacritty:
