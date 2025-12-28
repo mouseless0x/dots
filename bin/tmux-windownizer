@@ -8,7 +8,7 @@ else
         [ -d "$d" ] && dirs="$dirs $d"
     done
     export FZF_DEFAULT_COMMAND="find $dirs -mindepth 1 -maxdepth 1 -type d 2>/dev/null"
-    export FZF_DEFAULT_OPTS="--bind='j:down,k:up,ctrl-j:down,ctrl-k:up' --layout=reverse --border --height=40%"
+    export FZF_DEFAULT_OPTS="--bind='ctrl-j:down,ctrl-k:up' --layout=reverse --border --height=40%"
     selected=$(fzf)
 fi
 
