@@ -6,6 +6,7 @@ common: tmux alacritty ghostty starship fish bin nvim lazygit
 os := `uname`
 
 linux: ensure-packages common fonts-linux hyprland waybar xdg keyd walker npm-linux #linux-remap
+ssh-box: tmux fish nvim starship lazygit bin
 osx: common fonts-osx yabai sketchybar
 
 # /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
