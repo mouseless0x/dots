@@ -1,7 +1,28 @@
 #!/bin/bash
 
-# Enable notifs
-claude config set --global preferredNotifChannel terminal_bell
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Copy notify script
+mkdir -p ~/.claude
+cp "$SCRIPT_DIR/notify.sh" ~/.claude/notify.sh
+chmod +x ~/.claude/notify.sh
+
+# Set up hooks in settings.json
+SETTINGS="$HOME/.claude/settings.json"
+HOOKS='{
+    "UserPromptSubmit": [{"hooks": [{"type": "command", "command": "~/.claude/notify.sh UserPromptSubmit"}]}],
+    "Stop": [{"hooks": [{"type": "command", "command": "~/.claude/notify.sh Stop"}]}],
+    "Notification": [{"hooks": [{"type": "command", "command": "~/.claude/notify.sh Notification"}]}]
+}'
+
+if [ -f "$SETTINGS" ] && command -v jq &> /dev/null; then
+    jq --argjson h "$HOOKS" '.hooks = $h' "$SETTINGS" > "$SETTINGS.tmp" && mv "$SETTINGS.tmp" "$SETTINGS"
+else
+    mkdir -p "$(dirname "$SETTINGS")"
+    echo "{\"hooks\": $HOOKS}" > "$SETTINGS"
+fi
+
+echo "Configured Claude Code notification hooks"
 
 # Configure allowed tools in ~/.claude/settings.json
 #SETTINGS="$HOME/.claude/settings.json"
