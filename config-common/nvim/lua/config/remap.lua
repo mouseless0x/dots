@@ -85,8 +85,11 @@ local function copy_github_url(is_visual)
 
     local line_ref
     if is_visual then
-        local start_line = vim.fn.line("'<")
-        local end_line = vim.fn.line("'>")
+        local start_line = vim.fn.line("v")
+        local end_line = vim.fn.line(".")
+        if start_line > end_line then
+            start_line, end_line = end_line, start_line
+        end
         line_ref = "#L" .. start_line .. "-L" .. end_line
     else
         line_ref = "#L" .. vim.fn.line(".")
