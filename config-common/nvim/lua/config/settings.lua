@@ -16,8 +16,6 @@ if os.getenv("SSH_CONNECTION") then
 	}
 end
 
-vim.opt.clipboard = "unnamedplus"
-
 -- Show line num (+ relative line num).
 vim.opt.number = true
 vim.opt.relativenumber = true
