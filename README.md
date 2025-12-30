@@ -4,7 +4,7 @@ My dots
 
 ### Terminal
 
-- [alacritty](https://github.com/alacritty/alacritty)
+- [ghostty](https://ghostty.org/)
 - [fish](https://fishshell.com/)
     - [fisher](https://github.com/jorgebucaran/fisher)
 - [starship.rs](https://starship.rs/)
@@ -53,7 +53,6 @@ just osx
 just nvim
 just fish
 just tmux
-just alacritty
 # ...
 ```
 

@@ -1,7 +1,4 @@
-# Install everything
-# install-all: tmux alacritty starship bin yabai nvim fish
-
-common: tmux alacritty ghostty starship fish bin nvim lazygit
+common: tmux ghostty starship fish bin nvim lazygit
 # Define OS-specific variable
 os := `uname`
 
@@ -21,10 +18,6 @@ tmux:
   else \
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 2>/dev/null || echo "TPM already installed"; \
   fi
-
-# Install alacritty configuration
-alacritty:
-  cp -r ./config-common/alacritty ~/.config
 
 # Install ghostty configuration
 ghostty:

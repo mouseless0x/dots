@@ -36,6 +36,9 @@ clipboard-write = allow
 # Desktop notifications
 desktop-notifications = false
 
+# Scrollback
+scrollback-limit = 100000
+
 # Cursor
 cursor-style = block
 cursor-style-blink = false
