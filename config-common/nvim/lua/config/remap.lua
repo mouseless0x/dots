@@ -61,8 +61,8 @@ vim.keymap.set("n", "<leader>yy", function()
     print("Copied: " .. path)
 end, { silent = true })
 
--- Copy GitHub URL with line number
-vim.keymap.set("n", "<leader>yg", function()
+-- Copy GitHub URL with line number (supports visual mode for ranges)
+local function copy_github_url(is_visual)
     local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
     if vim.v.shell_error ~= 0 then
         print("Error: not in a git repository")
@@ -82,9 +82,20 @@ vim.keymap.set("n", "<leader>yg", function()
 
     local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
     local rel_path = vim.fn.expand("%:p"):sub(#vim.trim(git_root) + 2)
-    local line = vim.fn.line(".")
 
-    local url = github_url .. "/blob/" .. branch .. "/" .. rel_path .. "#L" .. line
+    local line_ref
+    if is_visual then
+        local start_line = vim.fn.line("'<")
+        local end_line = vim.fn.line("'>")
+        line_ref = "#L" .. start_line .. "-L" .. end_line
+    else
+        line_ref = "#L" .. vim.fn.line(".")
+    end
+
+    local url = github_url .. "/blob/" .. branch .. "/" .. rel_path .. line_ref
     vim.fn.setreg("+", url)
     print("Copied: " .. url)
-end, { silent = true })
+end
+
+vim.keymap.set("n", "<leader>yg", function() copy_github_url(false) end, { silent = true })
+vim.keymap.set("v", "<leader>yg", function() copy_github_url(true) end, { silent = true })
