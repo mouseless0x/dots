@@ -47,7 +47,7 @@ vim.keymap.set("v", "<leader>r", [["hy:%s/\V<C-r>h/<C-r>h/g<Left><Left>]], { nor
 vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/]], { noremap = true })
 
 -- Format JSON: Replace \" with " and run jq on highlighted text
-vim.keymap.set("v", "<leader>jq", [[:s/\\"/"/g<CR> | :'<,'>!jq .<CR>]], { noremap = true, silent = true })
+vim.keymap.set("v", "<leader>jq", [[:s/\\"/"/ge<CR>:'<,'>!jq .<CR>]], { noremap = true, silent = true })
 
 -- Copy file path with @ prefix
 vim.keymap.set("n", "<leader>yy", function()
